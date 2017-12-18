@@ -1,4 +1,4 @@
-# visual-aria - Revision 12/15/2017
+# visual-aria - Revision 12/18/2017
 Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.
 
 Distributed under the terms of the Open Source Initiative OSI - MIT License.

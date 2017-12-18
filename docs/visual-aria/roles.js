@@ -1,12 +1,12 @@
 /*!
-Visual ARIA Bookmarklet (12/15/2017)
+Visual ARIA Bookmarklet (12/18/2017), JS last modified 12/18/2017
 Copyright 2017 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
 
 (function(){
 
-	// For this implementation, a local relative copy of roles.css is loaded instead, so useOffline is still false.
+	// Set useOffline to true to enable the dynamic loader, and reference an https:// path to ensure that both secure and non-secure sites can be accessed by Visual ARIA.
 	var useOffline = false,
 
 	// Base path for dynamic loading of individual CSS files.
@@ -122,8 +122,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				loadCSS('6simple-widgets.css', '6');
 			}
 
-			// BG:12/15/2017: Added logic to check for improper uses of aria-owns that break the accessibility tree
-			nodes = document.querySelectorAll('input[aria-owns], img[aria-owns]');
+			// BG:12/18/2017: Added the AREA and HR elements to check for improper usage of aria-owns as well.
+			nodes = document.querySelectorAll('input[aria-owns], img[aria-owns], area[aria-owns], hr[aria-owns]');
 
 			for (var i = 0; i < nodes.length; i++){
 				nodes[i].setAttribute('data-ws-bm-aria-owns-invalid', 'true');

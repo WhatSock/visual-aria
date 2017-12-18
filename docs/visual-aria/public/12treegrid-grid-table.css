@@ -44182,9 +44182,10 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' aria-owns cannot be used on ' attr(data-ws-bm-aria-owns-invalid) ' elements because children are not supported ';
 }
-input[data-ws-bm-aria-owns-invalid]:before, img[data-ws-bm-aria-owns-invalid]:before {
+
+input[data-ws-bm-aria-owns-invalid]:before, img[data-ws-bm-aria-owns-invalid]:before, area[data-ws-bm-aria-owns-invalid]:before, hr[data-ws-bm-aria-owns-invalid]:before {
 content: none;
 }
-input[data-ws-bm-aria-owns-invalid], img[data-ws-bm-aria-owns-invalid] {
+input[data-ws-bm-aria-owns-invalid], img[data-ws-bm-aria-owns-invalid], area[data-ws-bm-aria-owns-invalid], hr[data-ws-bm-aria-owns-invalid] {
 border: ridge thick red;
 }
