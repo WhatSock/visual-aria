@@ -10,8 +10,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 	var useOffline = false,
 
 	// Base path for dynamic loading of individual CSS files.
-	basePath = '
-https://accdc.github.io/visual-aria/visual-aria/public/',
+	basePath = 'https://accdc.github.io/visual-aria/visual-aria/public/',
 
 // Set millisecond interval for dynamically loading supporting CSS files and performing the naming calculation for widget roles
 	msInterval = 3000;
