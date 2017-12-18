@@ -26,6 +26,7 @@ The JavaScript for Visual ARIA is first loaded using roles.js, which then dynami
 Configuration settings can be modified at the top of roles.js to set the base local or remote folder path, plus the millisecond delay for evaluating the text alternative computation and role monitoring sequence for the dynamic loader. Visual ARIA will recursively load itself into nested iframe documents when permitted by the browser's same-origin policy.
 
 Instructions
+-----
 
 1. Open the files within the Files folder in sequence using the numbered HTM files.
 
