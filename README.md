@@ -39,7 +39,7 @@ https://accdc.github.io/visual-aria/github-bookmarklet/visual-aria.htm
 3. Observe the new information displayed that conveys where ARIA is being used.
 
 4. Hover the mouse over various elements and observe the Name and Description computation that is displayed for interactive widget roles. This matches the naming computation described at
-http://www.levelaccess.com/blog/how-the-w3c-text-alternative-computation-works/
+https://www.levelaccess.com/how-the-w3c-text-alternative-computation-works/
 
 5. Use the keyboard to set focus to interactive widgets and observe how Visual ARIA conveys additional information for the element that has focus, especially when focus is set on the same elements that include ARIA roles.
 
