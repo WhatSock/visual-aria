@@ -1,0 +1,1599 @@
+
+/*
+ARIA Menu
+Required attributes: aria-activedescendant must be set on the role="menu" element if focusable to reference the ID of its child role="menuitem", role="menuitemcheckbox", or role="menuitemradio" elements;
+aria-checked must be set on all role="menuitemcheckbox" and role="menuitemradio" elements, and be toggled accordingly when activated. Menuitemradio elements cannot support aria-checked="mixed".
+Note: The Menuitem, Menuitemcheckbox, and Menuitemradio roles cannot include any embedded active elements.
+http://whatsock.com/training/matrices/#menu
+*/
+
+*[role="menuitem"] {
+border: ridge thick red;
+}
+*[role="menuitem"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitem (invalid nesting, Menuitem must have a parent of role=menu or role=menubar) ';
+}
+*[role="menuitemcheckbox"] {
+border: ridge thick red;
+}
+*[role="menuitemcheckbox"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemcheckbox (invalid nesting, Menuitemcheckbox must have a parent of role=menu or role=menubar) ';
+}
+*[role="menuitemradio"] {
+border: ridge thick red;
+}
+*[role="menuitemradio"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (invalid nesting, Menuitemradio must have a parent of role=menu or role=menubar) ';
+}
+
+*[role="menu"] *[role="menuitem"] {
+border: ridge thick orange;
+}
+*[role="menu"] *[role="menuitem"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitem ';
+}
+*[role="menu"] *[role="menuitem"][aria-disabled="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) [ARIA] Menuitem ';
+}
+
+*[role="menu"] *[role="menuitemcheckbox"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemcheckbox (missing aria-checked) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="false"], *[role="menu"] *[role="menuitemcheckbox"][aria-checked="true"], *[role="menu"] *[role="menuitemcheckbox"][aria-checked="mixed"] {
+border: ridge thick orange;
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemcheckbox ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemcheckbox ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) [ARIA] Menuitemcheckbox ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemcheckbox ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemcheckbox ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) (disabled) [ARIA] Menuitemcheckbox ';
+}
+
+*[role="menu"] *[role="menuitemradio"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (missing aria-checked) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="false"], *[role="menu"] *[role="menuitemradio"][aria-checked="true"] {
+border: ridge thick orange;
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemradio ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemradio ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (mixed state is not valid on Menuitemradio) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemradio ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemradio ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) [ARIA] Menuitemradio (mixed state is not valid on Menuitemradio) ';
+}
+
+*[role="menu"] *[role="menuitem"][aria-haspopup="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (opens-submenu) [ARIA] Menuitem ';
+}
+*[role="menu"] *[role="menuitem"][aria-haspopup="true"][aria-disabled="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) (opens-submenu) [ARIA] Menuitem ';
+}
+
+*[role="menu"] *[role="menuitemcheckbox"][aria-haspopup="true"][aria-checked]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemcheckbox (aria-haspopup is invalid on Menuitemcheckbox) ';
+}
+
+*[role="menu"] *[role="menuitemradio"][aria-haspopup="true"][aria-checked]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (aria-haspopup is invalid on Menuitemradio) ';
+}
+
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize][aria-disabled="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="mixed"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="mixed"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"][aria-disabled="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*:focus *[role="menuitem"], *:focus *[role="menuitemcheckbox"], *:focus *[role="menuitemradio"] {
+border: ridge thick red;
+}
+*:focus *[role="menuitem"]:after, *:focus *[role="menuitemcheckbox"]:after, *:focus *[role="menuitemradio"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (invalid element has focus, should be role=menubar, role=menu, role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menu"] *:focus, *[role="menubar"] *:focus {
+border: ridge thick red;
+}
+*[role="menu"] *:focus:after, *[role="menubar"] *:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (invalid element has focus, should be role=menubar, role=menu, role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menuitem"] *:focus, *[role="menuitemcheckbox"] *:focus, *[role="menuitemradio"] *:focus {
+border: ridge thick red;
+}
+*[role="menuitem"] *:focus:after, *[role="menuitemcheckbox"] *:focus:after, *[role="menuitemradio"] *:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (invalid element has focus, should be role=menubar, role=menu, role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+
+*[role="menu"] *[role="menuitem"]:focus {
+border: ridge thick green;
+}
+*[role="menu"] *[role="menuitem"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menuitem (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitem"][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) [ARIA] Menuitem (arrows should move focus) ';
+}
+
+*[role="menu"] *[role="menuitem"][aria-haspopup="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (opens-submenu) [ARIA] Menuitem (arrows should move focus and open submenu) ';
+}
+*[role="menu"] *[role="menuitem"][aria-haspopup="true"][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) (opens-submenu) [ARIA] Menuitem (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"]:focus {
+border: ridge thick red;
+}
+*[role="menu"] *[role="menuitemcheckbox"]:focus {
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemcheckbox (missing aria-checked) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="false"]:focus, *[role="menu"] *[role="menuitemcheckbox"][aria-checked="true"]:focus, *[role="menu"] *[role="menuitemcheckbox"][aria-checked="mixed"]:focus {
+border: ridge thick green;
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) (disabled) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"]:focus {
+border: ridge thick red;
+}
+*[role="menu"] *[role="menuitemradio"]:focus {
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (missing aria-checked) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="false"]:focus, *[role="menu"] *[role="menuitemradio"][aria-checked="true"]:focus {
+border: ridge thick green;
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="mixed"]:focus {
+border: ridge thick red;
+}
+*[role="menu"] *[role="menuitemradio"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menuitemradio (mixed state is not valid on Menuitemradio) ';
+}
+
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus and open submenu) ';
+}
+*[role="menu"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menu"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+
+*[role="menu"] {
+border: ridge thick orange;
+}
+*[role="menu"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (vertical) [ARIA] Menu (requires children with role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menu"]:focus {
+border: ridge thick red;
+}
+*[role="menu"]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menu (missing aria-activedescendant, which must reference child role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menu"][aria-activedescendant]:focus {
+border: ridge thick green;
+}
+*[role="menu"][aria-activedescendant]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (vertical) [ARIA] Menu aria-activedescendant=' attr(aria-activedescendant) ' must reference highlighted role=menuitem, role=menuitemcheckbox, or role=menuitemradio element ';
+}
+*[role="menu"][aria-orientation="horizontal"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (horizontal) [ARIA] Menu (requires children with role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menu"][aria-orientation="horizontal"][aria-activedescendant]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (horizontal) [ARIA] Menu aria-activedescendant=' attr(aria-activedescendant) ' must reference highlighted role=menuitem, role=menuitemcheckbox, or role=menuitemradio element ';
+}
+
+/*
+ARIA Menubar
+Required attributes: aria-activedescendant must be set on the role="menubar" element if focusable to reference the ID of its child role="menuitem", role="menuitemcheckbox", or role="menuitemradio" elements;
+aria-checked must be set on all role="menuitemcheckbox" and role="menuitemradio" elements, and be toggled accordingly when activated. Menuitemradio elements cannot support aria-checked="mixed".
+Note: The Menuitem, Menuitemcheckbox, and Menuitemradio roles cannot include any embedded active elements.
+http://whatsock.com/training/matrices/#menubar
+*/
+
+*[role="menubar"] *[role="menuitem"] {
+border: ridge thick orange;
+}
+*[role="menubar"] *[role="menuitem"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitem ';
+}
+*[role="menubar"] *[role="menuitem"][aria-disabled="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) [ARIA] Menuitem ';
+}
+
+*[role="menubar"] *[role="menuitemcheckbox"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemcheckbox (missing aria-checked) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="false"], *[role="menubar"] *[role="menuitemcheckbox"][aria-checked="true"], *[role="menubar"] *[role="menuitemcheckbox"][aria-checked="mixed"] {
+border: ridge thick orange;
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemcheckbox ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemcheckbox ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) [ARIA] Menuitemcheckbox ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemcheckbox ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemcheckbox ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) (disabled) [ARIA] Menuitemcheckbox ';
+}
+
+*[role="menubar"] *[role="menuitemradio"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (missing aria-checked) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="false"], *[role="menubar"] *[role="menuitemradio"][aria-checked="true"] {
+border: ridge thick orange;
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemradio ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemradio ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (mixed state is not valid on Menuitemradio) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemradio ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemradio ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="mixed"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) [ARIA] Menuitemradio (mixed state is not valid on Menuitemradio) ';
+}
+
+*[role="menubar"] *[role="menuitem"][aria-haspopup="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (opens-submenu) [ARIA] Menuitem ';
+}
+*[role="menubar"] *[role="menuitem"][aria-haspopup="true"][aria-disabled="true"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) (opens-submenu) [ARIA] Menuitem ';
+}
+
+*[role="menubar"] *[role="menuitemcheckbox"][aria-haspopup="true"][aria-checked]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemcheckbox (aria-haspopup is invalid on Menuitemcheckbox) ';
+}
+
+*[role="menubar"] *[role="menuitemradio"][aria-haspopup="true"][aria-checked]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (aria-haspopup is invalid on Menuitemradio) ';
+}
+
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize][aria-disabled="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="mixed"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="mixed"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (partially checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (unchecked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (checked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"][aria-disabled="true"]:hover:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (disabled) (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') ';
+}
+
+*[role="menubar"] *[role="menuitem"]:focus {
+border: ridge thick green;
+}
+*[role="menubar"] *[role="menuitem"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menuitem (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitem"][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) [ARIA] Menuitem (arrows should move focus) ';
+}
+
+*[role="menubar"] *[role="menuitem"][aria-haspopup="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (opens-submenu) [ARIA] Menuitem (arrows should move focus and open submenu) ';
+}
+*[role="menubar"] *[role="menuitem"][aria-haspopup="true"][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) (opens-submenu) [ARIA] Menuitem (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"]:focus {
+border: ridge thick red;
+}
+*[role="menubar"] *[role="menuitemcheckbox"]:focus {
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemcheckbox (missing aria-checked) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="false"]:focus, *[role="menubar"] *[role="menuitemcheckbox"][aria-checked="true"]:focus, *[role="menubar"] *[role="menuitemcheckbox"][aria-checked="mixed"]:focus {
+border: ridge thick green;
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-disabled="true"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) (disabled) [ARIA] Menuitemcheckbox (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"]:focus {
+border: ridge thick red;
+}
+*[role="menubar"] *[role="menuitemradio"]:focus {
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Menuitemradio (missing aria-checked) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="false"]:focus, *[role="menubar"] *[role="menuitemradio"][aria-checked="true"]:focus {
+border: ridge thick green;
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemradio (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="mixed"]:focus {
+border: ridge thick red;
+}
+*[role="menubar"] *[role="menuitemradio"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menuitemradio (mixed state is not valid on Menuitemradio) ';
+}
+
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus and open submenu) ';
+}
+*[role="menubar"] *[role="menuitem"][aria-posinset][aria-setsize][aria-haspopup="true"][aria-disabled="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (disabled) (opens-submenu) [ARIA] Menuitem (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemcheckbox"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="mixed"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (partially checked) (disabled) [ARIA] Menuitemcheckbox (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="false"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (unchecked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+*[role="menubar"] *[role="menuitemradio"][aria-posinset][aria-setsize][aria-disabled="true"][aria-checked="true"]:focus:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (checked) (disabled) [ARIA] Menuitemradio (' attr(aria-posinset) ' of ' attr(aria-setsize) ') (arrows should move focus) ';
+}
+
+*[role="menubar"] {
+border: ridge thick orange;
+}
+*[role="menubar"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (horizontal) [ARIA] Menubar (requires children with role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menubar"]:focus {
+border: ridge thick red;
+}
+*[role="menubar"]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Menubar (missing aria-activedescendant, which must reference child role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menubar"][aria-activedescendant]:focus {
+border: ridge thick green;
+}
+*[role="menubar"][aria-activedescendant]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (horizontal) [ARIA] Menubar aria-activedescendant=' attr(aria-activedescendant) ' must reference highlighted role=menuitem, role=menuitemcheckbox, or role=menuitemradio element ';
+}
+*[role="menubar"][aria-orientation="vertical"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (vertical) [ARIA] Menubar (requires children with role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menubar"][aria-orientation="vertical"][aria-activedescendant]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) (vertical) [ARIA] Menubar aria-activedescendant=' attr(aria-activedescendant) ' must reference highlighted role=menuitem, role=menuitemcheckbox, or role=menuitemradio element ';
+}
+
+*[data-ws-bm-ad-match] {
+outline: 3px green inset;
+background-color: #FFFFE5;
+color: #000;
+}
+
+*[data-ws-bm-ad-match]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] role=' attr(data-ws-bm-ad-match) ' ';
+}
+
+*[data-ws-bm-ad-invalid="true"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' Element referenced by aria-activedescendant has no valid role ';
+}
+
+*[role][data-ws-bm-self-ref="true"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' role=' attr(role) ' must not include aria-labelledby to reference itself ';
+}
+
+*[data-ws-bm-dtr-missing="true"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' Element must include role=term if referenced by role=definition using aria-labelledby ';
+}
+
+*[data-ws-bm-aria-owns-invalid]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' aria-owns cannot be used on ' attr(data-ws-bm-aria-owns-invalid) ' elements because children are not supported ';
+}
+input[data-ws-bm-aria-owns-invalid]:before, img[data-ws-bm-aria-owns-invalid]:before {
+content: none;
+}
+input[data-ws-bm-aria-owns-invalid], img[data-ws-bm-aria-owns-invalid] {
+border: ridge thick red;
+}

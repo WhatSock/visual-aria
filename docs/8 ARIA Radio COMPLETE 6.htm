@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>8 ARIA Radios COMPLETE 6</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link rel="stylesheet" type="text/css" href="css/global.css">
+<link rel="stylesheet" type="text/css" href="css/radios.css" />
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/radios.js"></script>
+</head>
+<body>
+<div id="container" class="pageContainer">
+<header>
+<button onclick="(function(){var a=document.createElement('script');a.type='text/javascript';a.src='visual-aria/roles.js';document.head.appendChild(a)})()">
+Load Visual ARIA
+</button>
+<div class="hd">
+<h1><span>ARIA Radios COMPLETE 6</span></h1>
+</div>
+</header>
+<div id="wrapper">
+<main>
+<div class="demo-block">
+
+<!--
+Completed fix:
+Added the tabindex attribute to manage single tab stop focus for the widget,
+plus added scripting to support the arrow keys for moving between role="radio" nodes,
+plus added aria-posinset and aria-setsize to correctly convey the 'X of Y' positioning information to ATs.
+-->
+
+<div role="radiogroup" aria-labelledby="radiogroupIdLegend" class="rGroup clearfix" id="radiogroupId">
+<h2 id="radiogroupIdLegend">How would you rate this page?</h2>
+<ul>
+<li><a tabindex="0" role="radio" aria-posinset="1" aria-setsize="5" aria-checked="true" href="#" class="accRadio" id="rOpt1"><span class="lbl">TUBULAR</span></a></li>
+<li><a tabindex="-1" role="radio" aria-posinset="2" aria-setsize="5" aria-checked="false" href="#" class="accRadio" id="rOpt2" ><span class="lbl">SQUIDGY</span></a></li>
+<li><a tabindex="-1" role="radio" aria-posinset="3" aria-setsize="5" aria-checked="false" href="#" class="accRadio" id="rOpt3" ><span class="lbl">FLOOPY</span></a></li>
+<li><a tabindex="-1" role="radio" aria-posinset="4" aria-setsize="5" aria-checked="false" href="#" class="accRadio" id="rOpt4" ><span class="lbl">RADICAL</span></a></li>
+<li><a tabindex="-1" role="radio" aria-posinset="5" aria-setsize="5" aria-checked="false" href="#" class="accRadio" id="rOpt5" ><span class="lbl">GNARLY!</span></a></li>
+</ul>
+</div>
+
+</div>
+
+<p>
+Load Visual ARIA and observe what happens when using the keyboard.
+</p>
+</main>
+</div> <!-- /wrapper -->
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+
+/*
+ARIA Application
+Note: The Application region role will change the browse modality of screen readers such as JAWS and NVDA, so caution must always be used when implementing this role.
+As of ARIA 1.1, role=application is no longer mapped as a landmark.
+http://whatsock.com/training/matrices/#application
+*/
+
+*[role="application"] {
+border: ridge thick green;
+}
+*[role="application"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) [ARIA] Application (WARNING: Changes screen reader behavior, use with caution) ';
+}
+*[role="application"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Application (WARNING: Changes screen reader behavior, use with caution) aria-label=' attr(aria-label) ' ';
+}
+*[role="application"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Application (WARNING: Changes screen reader behavior, use with caution) aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Alertdialog
+Required attributes: aria-label or aria-labelledby, and aria-describedby
+Note: When rendered, focus must move to an active element within the Alertdialog. If modal, aria-modal="true" must be set and the forward and backward tab order must be confined to active elements within the Alertdialog container. When closed, focus must return to the triggering element if applicable.
+http://whatsock.com/training/matrices/#alertdialog
+*/
+
+*[role="alertdialog"] {
+border: ridge thick red;
+}
+*[role="alertdialog"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alertdialog (missing required attributes) ';
+}
+*[role="alertdialog"][aria-label][aria-describedby], *[role="alertdialog"][aria-labelledby][aria-describedby] {
+border: ridge thick green;
+}
+*[role="alertdialog"][aria-label][aria-describedby]:before, *[role="alertdialog"][aria-labelledby][aria-describedby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (non-modal) Alertdialog (ensure focus is set to an element within the Alertdialog) ';
+}
+*[role="alertdialog"][aria-label][aria-describedby][aria-modal="true"]:before, *[role="alertdialog"][aria-labelledby][aria-describedby][aria-modal="true"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (modal) Alertdialog (ensure focus is set to an internal element and confined within the Alertdialog) ';
+}
+
+/*
+ARIA Dialog
+Required attributes: aria-label or aria-labelledby, and aria-describedby
+Note: When rendered, focus must move to an active element within the Dialog. If modal, aria-modal="true" must be set and the forward and backward tab order must be confined to active elements within the Dialog container. When closed, focus must return to the triggering element if applicable.
+http://whatsock.com/training/matrices/#dialog
+*/
+
+*[role="dialog"] {
+border: ridge thick red;
+}
+*[role="dialog"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Dialog (missing required attributes) ';
+}
+*[role="dialog"][aria-label][aria-describedby], *[role="dialog"][aria-labelledby][aria-describedby] {
+border: ridge thick green;
+}
+*[role="dialog"][aria-label][aria-describedby]:before, *[role="dialog"][aria-labelledby][aria-describedby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (non-modal) Dialog (ensure focus is set to an element within the Dialog) ';
+}
+*[role="dialog"][aria-label][aria-describedby][aria-modal="true"]:before, *[role="dialog"][aria-labelledby][aria-describedby][aria-modal="true"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (modal) Dialog (ensure focus is set to an internal element and confined within the Dialog) ';
+}

@@ -1,0 +1,310 @@
+
+/*
+ARIA Banner
+http://whatsock.com/training/matrices/#banner
+*/
+
+*[role="banner"] {
+border: ridge thick purple;
+}
+*[role="banner"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) (landmark) [ARIA] Banner ';
+}
+*[role="banner"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Banner aria-label=' attr(aria-label) ' ';
+}
+*[role="banner"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Banner aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Complementary
+http://whatsock.com/training/matrices/#complementary
+*/
+
+*[role="complementary"] {
+border: ridge thick purple;
+}
+*[role="complementary"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) (landmark) [ARIA] Complementary ';
+}
+*[role="complementary"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Complementary aria-label=' attr(aria-label) ' ';
+}
+*[role="complementary"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Complementary aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Contentinfo
+http://whatsock.com/training/matrices/#contentinfo
+*/
+
+*[role="contentinfo"] {
+border: ridge thick purple;
+}
+*[role="contentinfo"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) (landmark) [ARIA] Contentinfo ';
+}
+*[role="contentinfo"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Contentinfo aria-label=' attr(aria-label) ' ';
+}
+*[role="contentinfo"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Contentinfo aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Form
+http://whatsock.com/training/matrices/#form
+*/
+
+*[role="form"] {
+border: ridge thick purple;
+}
+*[role="form"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) (landmark) [ARIA] Form ';
+}
+*[role="form"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Form aria-label=' attr(aria-label) ' ';
+}
+*[role="form"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Form aria-labelledby=' attr(aria-labelledby) ' ';
+}
+form[aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Form aria-label=' attr(aria-label) ' ';
+}
+form[aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Form aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Main
+http://whatsock.com/training/matrices/#main
+*/
+
+*[role="main"] {
+border: ridge thick purple;
+}
+*[role="main"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) (landmark) [ARIA] Main ';
+}
+*[role="main"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Main aria-label=' attr(aria-label) ' ';
+}
+*[role="main"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Main aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Navigation
+http://whatsock.com/training/matrices/#navigation
+*/
+
+*[role="navigation"] {
+border: ridge thick purple;
+}
+*[role="navigation"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) (landmark) [ARIA] Navigation ';
+}
+*[role="navigation"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Navigation aria-label=' attr(aria-label) ' ';
+}
+*[role="navigation"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Navigation aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Search
+http://whatsock.com/training/matrices/#search
+*/
+
+*[role="search"] {
+border: ridge thick purple;
+}
+*[role="search"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) (landmark) [ARIA] Search ';
+}
+*[role="search"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Search aria-label=' attr(aria-label) ' ';
+}
+*[role="search"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' (landmark) [ARIA] Search aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Region
+Note: The Region role requires an explicit label using either aria-label or aria-labelledby.
+http://whatsock.com/training/matrices/#region
+*/
+
+*[role="region"] {
+border: ridge thick red;
+}
+*[role="region"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) [ARIA] Region (requires a label) ';
+}
+*[role="region"][aria-label], *[role="region"][aria-labelledby] {
+border: ridge thick purple;
+}
+*[role="region"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Region aria-label=' attr(aria-label) ' ';
+}
+*[role="region"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: purple;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Region aria-labelledby=' attr(aria-labelledby) ' ';
+}

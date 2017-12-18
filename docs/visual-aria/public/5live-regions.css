@@ -1,0 +1,459 @@
+
+/*
+Generic ARIA Live Region
+*/
+
+*[aria-live] {
+border: ridge thick fuchsia;
+}
+*[aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
+}
+*[aria-live][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
+}
+*[aria-live][aria-relevant]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[aria-live][aria-relevant][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+
+/*
+ARIA Alert
+Note: For an OS system alert to fire, a container with role="alert" must be dynamically rendered using the CSS 'display' property, or JavaScript core DOM methods such as element.appendChild/replaceChild, or element.innerHTML.
+The default live region attribute for Alert is aria-live="assertive".
+http://whatsock.com/training/matrices/#alert
+*/
+
+*[role="alert"] {
+border: ridge thick fuchsia;
+}
+*[role="alert"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive ';
+}
+*[role="alert"][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
+}
+*[role="alert"][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="alert"][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="alert"][aria-relevant]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="alert"][aria-relevant][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="alert"][aria-relevant][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=assertive aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="alert"][aria-relevant][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Alert (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+
+/*
+ARIA Log
+Note: For a live region event to fire, a container with role="log" must be dynamically written to using JavaScript core DOM methods such as element.appendChild/replaceChild, or element.innerHTML.
+The default live region attribute for Log is aria-live="polite".
+http://whatsock.com/training/matrices/#log
+*/
+
+*[role="log"] {
+border: ridge thick fuchsia;
+}
+*[role="log"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite ';
+}
+*[role="log"][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
+}
+*[role="log"][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="log"][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="log"][aria-relevant]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="log"][aria-relevant][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="log"][aria-relevant][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="log"][aria-relevant][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Log (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+
+/*
+ARIA Marquee
+Note: For a live region event to fire, a container with role="marquee" must be dynamically written to using JavaScript core DOM methods such as element.appendChild/replaceChild, or element.innerHTML.
+The default live region attribute for Marquee is aria-live="off".
+http://whatsock.com/training/matrices/#marquee
+*/
+
+*[role="marquee"] {
+border: ridge thick fuchsia;
+}
+*[role="marquee"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off ';
+}
+*[role="marquee"][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
+}
+*[role="marquee"][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="marquee"][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="marquee"][aria-relevant]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="marquee"][aria-relevant][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="marquee"][aria-relevant][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="marquee"][aria-relevant][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Marquee (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+
+/*
+ARIA Status
+Note: For a live region event to fire, a container with role="status" must be dynamically written to using JavaScript core DOM methods such as element.appendChild/replaceChild, or element.innerHTML.
+The default live region attribute for Status is aria-live="polite".
+http://whatsock.com/training/matrices/#status
+*/
+
+*[role="status"] {
+border: ridge thick fuchsia;
+}
+*[role="status"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite ';
+}
+*[role="status"][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
+}
+*[role="status"][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="status"][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="status"][aria-relevant]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="status"][aria-relevant][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="status"][aria-relevant][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=polite aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="status"][aria-relevant][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Status (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+
+/*
+ARIA Timer
+Note: For a live region event to fire, a container with role="timer" must be dynamically written to using JavaScript core DOM methods such as element.appendChild/replaceChild, or element.innerHTML.
+The default live region attribute for Timer is aria-live="off".
+http://whatsock.com/training/matrices/#timer
+*/
+
+*[role="timer"] {
+border: ridge thick fuchsia;
+}
+*[role="timer"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off ';
+}
+*[role="timer"][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' ';
+}
+*[role="timer"][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="timer"][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' ';
+}
+*[role="timer"][aria-relevant]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="timer"][aria-relevant][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="timer"][aria-relevant][aria-atomic]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=off aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}
+*[role="timer"][aria-relevant][aria-atomic][aria-live]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: fuchsia;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Timer (live region) (must be dynamically written to) aria-live=' attr(aria-live) ' aria-atomic=' attr(aria-atomic) ' aria-relevant=' attr(aria-relevant) ' ';
+}

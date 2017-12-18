@@ -1,0 +1,673 @@
+
+/*
+ARIA Article
+http://whatsock.com/training/matrices/#article
+*/
+
+*[role="article"] {
+border: ridge thick blue;
+}
+*[role="article"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) [ARIA] Article ';
+}
+*[role="article"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Article aria-label=' attr(aria-label) ' ';
+}
+*[role="article"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Article aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Definition
+Required attributes: aria-labelledby which must point to an element with role=term
+http://whatsock.com/training/matrices/#definition
+*/
+
+*[role="definition"] {
+border: ridge thick red;
+}
+*[role="definition"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Definition (missing aria-labelledby) ';
+}
+*[role="definition"][aria-labelledby] {
+border: ridge thick blue;
+}
+*[role="definition"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Definition aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Directory
+Note: Requires children with role="listitem".
+http://whatsock.com/training/matrices/#directory
+*/
+
+*[role="listitem"] {
+border: ridge thick red;
+}
+*[role="listitem"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Listitem (missing parent with role=list or role=directory) ';
+}
+
+*[role="directory"] *[role="listitem"] {
+border: ridge thick blue;
+}
+*[role="directory"] *[role="listitem"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Listitem (contained within role=directory) ';
+}
+
+*[role="directory"] {
+border: ridge thick blue;
+}
+*[role="directory"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Directory (requires children with role=listitem) ';
+}
+*[role="directory"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Directory (requires children with role=listitem) aria-label=' attr(aria-label) ' ';
+}
+*[role="directory"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Directory (requires children with role=listitem) aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Document
+http://whatsock.com/training/matrices/#document
+*/
+
+*[role="document"] {
+border: ridge thick blue;
+}
+*[role="document"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) [ARIA] Document ';
+}
+*[role="document"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Document aria-label=' attr(aria-label) ' ';
+}
+*[role="document"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Document aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Feed
+Note: Requires first level children with role="article".
+Elements with role="article" should be focusable and navigable using the arrow keys, and newly rendered articles must be either appended or prepended to the role="feed" container.
+The container with role="feed" should not be focusable.
+http://whatsock.com/training/matrices/#feed
+*/
+
+*[role="feed"] *[role="article"] {
+border: ridge thick blue;
+}
+*[role="feed"] *[role="article"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Article (contained within role=feed) ';
+}
+
+*[role="feed"] *[role="article"]:focus {
+border: ridge thick green;
+}
+*[role="feed"] *[role="article"]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Article (contained within role=feed) (arrows should move focus between articles) ';
+}
+
+*[role="feed"] {
+border: ridge thick blue;
+}
+*[role="feed"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Feed (requires first level focusable children with role=article) ';
+}
+*[role="feed"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Feed (requires first level focusable children with role=article) aria-label=' attr(aria-label) ' ';
+}
+*[role="feed"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Feed (requires first level focusable children with role=article) aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+*[role="feed"]:focus {
+border: ridge thick red;
+}
+*[role="feed"]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Feed (role=feed should not be focusable) ';
+}
+
+/*
+ARIA Figure
+http://whatsock.com/training/matrices/#figure
+*/
+
+*[role="figure"] {
+border: ridge thick blue;
+}
+*[role="figure"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Figure ';
+}
+*[role="figure"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Figure aria-label=' attr(aria-label) ' ';
+}
+*[role="figure"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Figure aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Heading
+Required attributes: aria-level
+http://whatsock.com/training/matrices/#heading
+*/
+
+*[role="heading"] {
+border: ridge thick red;
+}
+*[role="heading"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Heading (missing aria-level) ';
+}
+*[role="heading"][aria-level] {
+border: ridge thick blue;
+}
+*[role="heading"][aria-level]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Heading aria-level=' attr(aria-level) ' ';
+}
+
+/*
+ARIA Img
+http://whatsock.com/training/matrices/#img
+*/
+
+*[role="img"] {
+border: ridge thick blue;
+}
+*[role="img"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Img ';
+}
+*[role="img"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Img aria-label=' attr(aria-label) ' ';
+}
+*[role="img"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Img aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA List
+Note: Requires children with role="listitem".
+http://whatsock.com/training/matrices/#list
+*/
+
+*[role="list"] *[role="listitem"] {
+border: ridge thick blue;
+}
+*[role="list"] *[role="listitem"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Listitem (contained within role=list) ';
+}
+
+*[role="list"] {
+border: ridge thick blue;
+}
+*[role="list"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] List (requires children with role=listitem) ';
+}
+*[role="list"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] List (requires children with role=listitem) aria-label=' attr(aria-label) ' ';
+}
+*[role="list"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] List (requires children with role=listitem) aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Math
+http://whatsock.com/training/matrices/#math
+*/
+
+*[role="math"] {
+border: ridge thick blue;
+}
+*[role="math"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Math (unlabelled) ';
+}
+*[role="math"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Math aria-label=' attr(aria-label) ' ';
+}
+*[role="math"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Math aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Note
+http://whatsock.com/training/matrices/#note
+*/
+
+*[role="note"] {
+border: ridge thick blue;
+}
+*[role="note"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' (unlabelled) [ARIA] Note ';
+}
+*[role="note"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Note aria-label=' attr(aria-label) ' ';
+}
+*[role="note"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Note aria-labelledby=' attr(aria-labelledby) ' ';
+}
+
+/*
+ARIA Separator
+http://whatsock.com/training/matrices/#separator
+*/
+
+*[role="separator"] {
+border: ridge thick blue;
+}
+*[role="separator"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' (horizontal) [ARIA] Separator ';
+}
+*[role="separator"][aria-orientation="vertical"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' (vertical) [ARIA] Separator ';
+}
+
+/*
+ARIA Term
+Must be referenced by role=definition using aria-labelledby
+Element with role="term" must not be a focusable active element
+http://whatsock.com/training/matrices/#term
+*/
+
+*[role="term"] {
+border: ridge thick blue;
+}
+*[role="term"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: blue;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Term ';
+}
+
+/*
+ARIA Toolbar
+Note: If the container with role="toolbar" is focusable, aria-activedescendant must be used to reference the currently highlighted Button within the Toolbar.
+http://whatsock.com/training/matrices/#toolbar
+*/
+
+*[role="toolbar"] {
+border: ridge thick green;
+}
+*[role="toolbar"]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Toolbar ';
+}
+*[role="toolbar"][tabindex] {
+border: ridge thick orange;
+}
+*[role="toolbar"][tabindex]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (focusable) [ARIA] Toolbar ';
+}
+*[role="toolbar"][tabindex]:focus {
+border: ridge thick red;
+}
+*[role="toolbar"][tabindex]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Toolbar (missing aria-activedescendant) ';
+}
+*[role="toolbar"][tabindex][aria-activedescendant]:focus {
+border: ridge thick green;
+}
+*[role="toolbar"][tabindex][aria-activedescendant]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Toolbar: aria-activedescendant=' attr(aria-activedescendant) ' ';
+}
+*[role="toolbar"][aria-label] {
+border: ridge thick green;
+}
+*[role="toolbar"][aria-label]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Toolbar aria-label=' attr(aria-label) ' ';
+}
+*[role="toolbar"][aria-label][tabindex] {
+border: ridge thick orange;
+}
+*[role="toolbar"][aria-label][tabindex]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (focusable) [ARIA] Toolbar aria-label=' attr(aria-label) ' ';
+}
+*[role="toolbar"][aria-label][tabindex]:focus {
+border: ridge thick red;
+}
+*[role="toolbar"][aria-label][tabindex]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Toolbar (missing aria-activedescendant) ';
+}
+*[role="toolbar"][aria-label][tabindex][aria-activedescendant]:focus {
+border: ridge thick green;
+}
+*[role="toolbar"][aria-label][tabindex][aria-activedescendant]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Toolbar: aria-activedescendant=' attr(aria-activedescendant) ' aria-label=' attr(aria-label) ' ';
+}
+*[role="toolbar"][aria-labelledby] {
+border: ridge thick green;
+}
+*[role="toolbar"][aria-labelledby]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Toolbar aria-labelledby=' attr(aria-labelledby) ' ';
+}
+*[role="toolbar"][aria-labelledby][tabindex] {
+border: ridge thick orange;
+}
+*[role="toolbar"][aria-labelledby][tabindex]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: black;
+color: orange;
+font-size: .9rem; font-weight: 900;
+content: ' (focusable) [ARIA] Toolbar aria-labelledby=' attr(aria-labelledby) ' ';
+}
+*[role="toolbar"][aria-labelledby][tabindex]:focus {
+border: ridge thick red;
+}
+*[role="toolbar"][aria-labelledby][tabindex]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Toolbar (missing aria-activedescendant) ';
+}
+*[role="toolbar"][aria-labelledby][tabindex][aria-activedescendant]:focus {
+border: ridge thick green;
+}
+*[role="toolbar"][aria-labelledby][tabindex][aria-activedescendant]:focus:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+z-index: 10000;
+background-color: white;
+color: green;
+font-size: .9rem; font-weight: 900;
+content: ' (focused) [ARIA] Toolbar: aria-activedescendant=' attr(aria-activedescendant) ' aria-labelledby=' attr(aria-labelledby) ' ';
+}

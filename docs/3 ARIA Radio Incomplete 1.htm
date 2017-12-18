@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>3 ARIA Radios Incomplete 1</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link rel="stylesheet" type="text/css" href="css/global.css">
+<link rel="stylesheet" type="text/css" href="css/radios.css" />
+</head>
+<body>
+<div id="container" class="pageContainer">
+<header>
+<button onclick="(function(){var a=document.createElement('script');a.type='text/javascript';a.src='visual-aria/roles.js';document.head.appendChild(a)})()">
+Load Visual ARIA
+</button>
+<div class="hd">
+<h1><span>ARIA Radios Incomplete 1</span></h1>
+</div>
+</header>
+<div id="wrapper">
+<main>
+<div class="demo-block">
+
+<!--
+Problem: There is no ARIA markup to convey the proper role and state of the widget to AT users.
+-->
+
+<div class="rGroup clearfix" id="radiogroupId">
+<h2 id="radiogroupIdLegend">How would you rate this page?</h2>
+<ul>
+<li><a href="#" class="accRadio" id="rOpt1"><span class="lbl">TUBULAR</span></a></li>
+<li><a href="#" class="accRadio" id="rOpt2" ><span class="lbl">SQUIDGY</span></a></li>
+<li><a href="#" class="accRadio" id="rOpt3" ><span class="lbl">FLOOPY</span></a></li>
+<li><a href="#" class="accRadio" id="rOpt4" ><span class="lbl">RADICAL</span></a></li>
+<li><a href="#" class="accRadio" id="rOpt5" ><span class="lbl">GNARLY!</span></a></li>
+</ul>
+</div>
+
+</div>
+
+<p>
+Load Visual ARIA and confirm there is no ARIA markup. Click the ARIA Role Matrices button to look up the requisite role mappings for this widget structure in section 3.2.6.
+</p>
+</main>
+</div> <!-- /wrapper -->
+</div>
+</body>
+</html>

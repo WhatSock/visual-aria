@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>2 Content hidden using aria-hidden</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link rel="stylesheet" type="text/css" href="css/global.css">
+</head>
+<body>
+<div id="container" class="pageContainer">
+<header>
+<button onclick="(function(){var a=document.createElement('script');a.type='text/javascript';a.src='visual-aria/roles.js';document.head.appendChild(a)})()">
+Load Visual ARIA
+</button>
+<div class="hd">
+<h1><span>Content hidden using aria-hidden</span></h1>
+</div>
+</header>
+<div id="wrapper">
+<main>
+
+<!--
+Problem: aria-hidden is being improperly used to hide textually significant information from non-sighted AT users.
+-->
+
+<div id="testSection1" class="clearfix" aria-hidden="true">
+<p>
+Slightly smaller than the Moon, Europa is primarily made of silicate rock and has a water-ice crust and probably an iron-nickel core. It has a tenuous atmosphere composed primarily of oxygen. Its surface is striated by cracks and streaks, whereas craters are relatively rare. It has the smoothest surface of any known solid object in the Solar System. The apparent youth and smoothness of the surface have led to the hypothesis that a water ocean exists beneath it, which could conceivably serve as an abode for extraterrestrial life. This hypothesis proposes that heat from tidal flexing causes the ocean to remain liquid and drives geological activity similar to plate tectonics. On 8 September 2014, NASA reported finding evidence supporting earlier suggestions of plate tectonics in Europa's thick ice shell-the first sign of such geological activity on a world other than Earth. On 12 May 2015, scientists announced that sea salt from a subsurface ocean may be coating some geological features on Europa, suggesting that the ocean is interacting with the seafloor. This may be important in determining if Europa could be habitable for life.  
+</p>
+<p>
+<img src="img/cresent_europa.jpg" alt="Cresent Europa" />
+</p>
+</div>
+
+<p>
+Load Visual ARIA and confirm what is wrong with this markup.
+</p>
+</main>
+</div> <!-- /wrapper -->
+</div>
+</body>
+</html>

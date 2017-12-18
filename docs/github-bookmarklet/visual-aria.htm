@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> The Visual ARIA Bookmarklet </title>
+        <meta name="Author" content="Bryan Garaventa">
+                <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <script type="text/javascript">
+            var isVisualARIA = true;
+        </script>
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/Acc.DC.API.js"></script>
+        <script type="text/javascript" src="js/setup.js"></script>
+    </head>
+    <body>
+        <div id="container" class="pageContainer">
+        	 <header>
+                <div class="menuLinks">
+                    <p class="logo"><a href="http://whatsock.com/"><img title="WhatSock : Changing the world one step at a time" alt="WhatSock : Changing the world one step at a time" src="img/whatsock.svg" /></a></p>
+                </div>
+                <div id="hd1" class="hd" tabindex="-1">
+                    <h1><span>The Visual ARIA Bookmarklet</span></h1>
+                </div>
+                <nav id="ph">
+                    <h2 class="nopermalink">Main navigation</h2>
+                </nav>
+            </header>
+			
+            <div id="wrapper">
+                <main>
+                	
+					<div class="introduction">
+						<p>Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.</p>
+						<p><a href="https://github.com/accdc/visual-aria" target="_blank">Download Visual ARIA from GitHub</a> to view the offline source code for Visual ARIA, which includes important information that explains how it works, plus an example exercise for building a simulated radio button construct using Visual ARIA.</p>
+						<p>Additional resources:</p>
+                	                	<ul><li>
+                	                	                	                	<a href="http://whatsock.com/training/matrices">The ARIA Role Matrices</a>
+                	                	                	                	</li><li>
+                	                	                	                	<a href="http://whatsock.com/training/matrices/screen_curtain.htm">The Screen Curtain Bookmarklet</a>
+                	                	                	                	</li><li>
+                	                	                	                	<a href="http://whatsock.com/training">The Accessibility Tree Training Guide</a>
+                	                	</li></ul>
+                	</div>
+					
+		            <div class="intro" id="bookmarklet">
+		                <p><a id="bookmarkletBtn" onclick="return false;" href="javascript:(function(){var a=document.createElement('script');a.type='text/javascript';a.src='https://accdc.github.io/visual-aria/visual-aria/roles.js';document.head.appendChild(a)})()" role="button">
+		                	<span>Visual ARIA Bookmarklet</span></a></p>
+		                <div class="content">
+		                	<p><strong>Instructions:</strong> </p>
+							<p>Right click the <em>"Visual ARIA Bookmarklet"</em> button, then choose <strong>Add to 
+								Favorites</strong> or <strong>Add to Bookmarks</strong>. 
+								The Visual ARIA Bookmarklet can then 
+								be run upon any webpage by choosing the bookmarklet from within your 
+								Favorites or Bookmarks menu.</p>
+		                    <p>Alternatively, the bookmarklet can be added manually within browsers such 
+							as Chrome and Safari, by activating <strong>New</strong> within the Bookmark Manager, 
+							then pasting the below code into the URL field.</p>
+							
+		                    <p><textarea readonly title="Visual ARIA Bookmarklet" rows="7" cols="100">
+  javascript:
+  
+  (function(){
+	var a=document.createElement('script');
+	a.type='text/javascript';
+	a.src='https://accdc.github.io/visual-aria/visual-aria/roles.js';
+	document.head.appendChild(a)
+  })()
+		                        </textarea>
+		                    </p>
+		            </div>
+					</div>
+		            <div class="cb" id="pgContent">
+		                <article id="pg-intro">
+		                    <div id="target-audience" class="hd" tabindex="-1">
+		                        <h2><span> Target Audience</span></h2>
+		                    </div>
+		                    <div class="intro tal">
+		                        <ul>
+		                            <li> Visual ARIA can be used within classrooms by educators to physically show sighted students what ARIA does and how it works, and how the improper use of ARIA causes accessibility issues when misapplied.</li>
+		                            <li> Sighted students can use Visual ARIA to evaluate their own projects as they learn accessible coding practices, with real-time feedback to identify their mistakes and coach them when necessary.</li>
+		                            <li> Online learning programs can incorporate Visual ARIA to provide real-time feedback as students build test widgets to practice through experience and repetition.</li>
+		                            <li> Sighted Quality Analysis teams can use Visual ARIA to reliably evaluate ARIA usage and related interactivity for all public and private services and products, without having to first understand or have experience using Assistive Technologies in advance.</li>
+		                            <li> Teams of sighted engineers can incorporate Visual ARIA within the development process to see how ARIA is being used within their projects, and whether ARIA is being used correctly according to spec when interacted with.</li>
+		                            <li> Any sighted person who is interested in ARIA can use Visual ARIA to see where and how ARIA is used on any website to better understand how Assistive Technology users are impacted by its use or misuse.</li>
+		                        </ul>
+		                    </div>
+		                    <div id="how-it-works" class="hd" tabindex="-1">
+		                        <h2><span> How It Works</span></h2>
+		                    </div>
+		                    <div class="intro tal">
+		                        <p> The bookmarklet script includes a small amount of JavaScript, which 
+								loads the <a target="_blank" href="https://raw.githubusercontent.com/accdc/aria-matrices/master/The%20ARIA%20Role%20Conformance%20Matrices/visual-aria/roles.js">Visual ARIA JavaScript setup file</a>.</p>
+		                        <p> This small JavaScript file then loads the <a target="_blank" href="https://raw.githubusercontent.com/accdc/aria-matrices/master/The%20ARIA%20Role%20Conformance%20Matrices/visual-aria/roles.css">roles.css</a> stylesheet, which comprises all of the Visual ARIA cascading logic functionality.</p>
+		                        <p> The JavaScript file then monitors the page for changes to ARIA roles and supporting attributes associated with HTML input and img elements, which is necessary since these elements don't support the use of the :before and :after CSS pseudo elements.</p>
+		                        <p> Since all of the processing power is handled using CSS, visual feedback by Visual ARIA is instantaneous, and should work correctly within any CSS3 compliant browser within any operating system on any desktop or mobile device.</p>
+		                        <p> Though the coaching advice within Visual ARIA is geared for desktop keyboard interactions, the ARIA spec compliance algorithms conveyed by Visual ARIA are applicable to both desktop and mobile platforms equally.</p>
+		                    </div>
+		                    <div id="instructions-for-use" class="hd" tabindex="-1">
+		                        <h2><span> Instructions for Use</span></h2>
+		                    </div>
+		                    <div class="intro tal">
+		                        <p> Visual ARIA is very simple to use.</p>
+		                        <ol>
+		                            <li> Navigate to the webpage that you wish to examine.</li>
+		                            <li> Activate the Visual ARIA Bookmarklet from your Favorites or Bookmarks menu, and wait for Visual ARIA to load.<i> The time for this may vary depending on the speed of your internet connection.</i></li>
+		                        </ol>
+		                        <p> You will then see various colored borders where ARIA roles are detected, and tooltips to convey their purpose and supporting attributes.</p>
+		                        <p> These borders and tooltips follow several distinct color schemes to identify the differences between static and interactive widget roles.</p>
+		                        <p> To view the Alternative Text Calculation for any form field, link, or simple interactive widget role, hover the mouse over the active element.</p>
+		                    </div>
+		                    <div id="static-roles" class="hd" tabindex="-1">
+		                        <h3><span> Static Roles</span></h3>
+		                    </div>
+		                    <div class="intro tal">
+		                        <ul>
+		                            <li><strong class="purpleTltp">Purple border with purple tooltip:</strong> 
+										Identifies landmark and region roles.</li>
+		                            <li><strong class="blueTltp"> Blue border with blue tooltip:</strong> 
+										Identifies structural roles.</li>
+		                            <li><strong class="redTltp"> Red border with red tooltip:</strong> 
+										Identifies role usage errors within structural role usage.</li>
+		                        </ul>
+		                    </div>
+		                    <div id="live-region-roles" class="hd" tabindex="-1">
+		                        <h3><span> Live Region Roles</span></h3>
+		                    </div>
+		                    <div class="intro tal">
+		                        <ul>
+		                            <li><strong class="fuchsiaTltp">Fuchsia border with fuchsia tooltip:</strong> 
+										Identifies live region roles and associated attributes.</li>
+		                        </ul>
+		                    </div>
+		                    <div id="interactive-roles" class="hd" tabindex="-1">
+		                        <h3><span>Interactive Roles</span></h3>
+		                    </div>
+		                    <div class="intro tal">
+		                        <ul>
+		                            <li><strong class="orangeTltp">Orange border with orange tooltip:</strong> 
+										Identifies technically compliant interactive role usage. 
+										<em>(Requires keyboard testing to validate functionality)</em></li>
+		                            <li><strong class="greenTltp">Green border with green tooltip:</strong> 
+										Identifies technically compliant interactive role usage that matches 
+										the correct focus management for that role type.</li>
+		                            <li><strong class="redTltp">Red border with red tooltip:</strong>  Identifies role usage 
+										and focus management errors within interactive role usage.</li>
+		                        </ul>
+		                        <p> When interacting with keyboard accessible widget roles, the goal is to turn both the focus outline and border of the focused widget role <span class="greenTltp">green</span>. This conveys that focus management and ARIA widget role usage are correctly synchronized.</p>
+		                        <p> If however you see two different colored borders on the same widget role, such as <span class="orangeTltp">orange</span> and <span class="redTltp">red</span>, then focus management and ARIA widget role usage for this implementation are incorrect and not programmed according to spec.</p>
+		                    </div>
+		                    <div id="alternative-text-calculation" class="hd" tabindex="-1">
+		                        <h2><span> Alternative Text Calculation</span></h2>
+		                    </div>
+		                    <div class="intro tal">
+		                        <p> Visual ARIA will automatically calculate the Alternative Text Calculation for any form field, link, or simple ARIA interactive widget role, and display this information when the mouse is hovered over the element.</p>
+		                        <p> There are some important details about this feature that need to be explained however.</p>
+		                        <p> There are two properties that need to be understood within the Accessibility Tree, the Name, and the Description. The Name represents the calculated label text for the active element, and the Description represents supplementary information that can be used by Assistive Technologies to accompany the Name.</p>
+		                    </div>
+		                    <div id="name-calculation" class="hd" tabindex="-1">
+		                        <h3><span> Name Calculation</span></h3>
+		                    </div>
+		                    <div class="intro tal">
+		                        <dl class="calculation">
+		                            <dt><code>aria-labelledby</code></dt>
+		                            <dd>Caveats: Must not be included with <code>aria-label</code>, nor with the HTML 
+									label element with matching <code>'for'</code> and <code>'id'</code> attributes. Also, 
+									<code>aria-labelledby</code> cannot recursively reference other elements 
+									that include <code>aria-labelledby</code>. The presence of <code>role="presentation"</code> 
+									or <code>role="none"</code> will nullify <code>aria-labelledby</code> on the same node.</dd>
+									
+		                            <dt><code>aria-label</code></dt>
+		                            <dd>Caveats: Only if <code>aria-labelledby</code> is not set. If included within a 
+									container referenced via <code>aria-labelledby</code>, the HTML label element with 
+									matching <code>'for'</code> and <code>'id'</code> attributes, or 
+									<code>aria-describedby</code>, the value of 
+									<code>aria-label</code> will supersede any embedded content or additional <code>aria-label</code> 
+									attribute values; which will be ignored when setting the Accessible Name 
+									of the parent role. The presence of <code>role="presentation"</code> or <code>role="none"</code> 
+									will nullify <code>aria-label</code> on the same node.</dd>
+									
+		                            <dt>HTML label element with matching <code>'for'</code> and <code>'id'</code> attributes</dt>
+		                            <dd>Caveats: Only if <code>aria-labelledby</code> or <code>aria-label</code> is not set; on HTML 
+									input and select elements only.
+		                            </dd>
+		                            
+									<dt>HTML <code>'alt'</code> attribute</dt>
+		                            <dd>Caveats: Only if <code>aria-labelledby</code> or <code>aria-label</code> is not set; 
+									on HTML img elements only. The presence of <code>role="presentation"</code> or <code>role="none"</code>  
+									will nullify <code>'alt'</code> on the same node.
+		                            </dd>
+		                            
+									<dt>HTML <code>'title'</code> attribute</dt>
+		                            <dd>Caveats: Only if <code>aria-labelledby</code>, <code>aria-label</code>, or <code>'alt'</code> is not set; 
+									on HTML img elements only. The presence of <code>role="presentation"</code> or <code>role="none"</code>  
+									will nullify <code>'title'</code> on the same node.
+		                            </dd>
+		                        </dl>
+		                    </div>
+		                    <div id="description-calculation" class="hd" tabindex="-1">
+		                        <h3><span> Description Calculation</span></h3>
+		                    </div>
+		                    <div class="intro tal">
+		                        <dl class="calculation">
+		                            <dt><code>aria-describedby</code></dt>
+		                            <dd>Caveats: Must not be included with the HTML <code>'title'</code> attribute, which 
+									will be overwritten by <code>aria-describedby</code>. The presence of 
+									<code>role="presentation"</code> or <code>role="none"</code> will nullify 
+									<code>aria-describedby</code> on the same node.
+		                            </dd>
+		                            <dt>HTML 'title' attribute </dt>
+		                            <dd>Caveats: Only when applied to active elements that are not HTML img 
+									elements. Must not be included with <code>aria-describedby</code>, which will overwrite 
+									the value of <code>'title'</code> as the Description. The presence of 
+									<code>role="presentation"</code> or <code>role="none"</code> will nullify <code>'title'</code> 
+									on the same node.
+		                            </dd>
+		                        </dl>
+		                    </div>
+		                    <div id="important-details" class="hd" tabindex="-1">
+		                        <h3><span> Important Details</span></h3>
+		                    </div>
+		                    <div class="intro tal">
+		                        <p> Any use of <code>aria-hidden="true"</code> or the CSS properties 
+								<code>display:none</code> or <code>visibility:hidden</code>, will cancel the naming 
+								calculation for the referenced element and all elements within 
+								the subtree of that element.</p>
+		                        <p> Additionally, the presence of CSS content via the 
+								<code>::before</code> and <code>::after</code> pseudo elements are also included as part 
+								of the naming calculation.</p>
+		                        <p> The Name and Description exposed by Visual ARIA strictly 
+								follows the <a href="http://www.w3.org/TR/accname-aam-1.1/" target="_blank">Alternative Text Calculation</a> for interactive elements, which may not exactly match what is represented by the Accessibility Tree within certain browsers, nor what is conveyed by Assistive Technologies.</p>
+		                        <p> The value in exposing this calculation however, is to identify current bugs within browsers that need to be reported to their venders when discovered using Object Inspector for example, as well as bugs with Assistive 
+								Technologies that need to be reported to AT venders. This will lead 
+								to better interoperability support in the future.</p>
+		                        <p> It is important to note that Visual ARIA will include content 
+								added using CSS pseudo elements as part of the estimated naming 
+								calculation, but not for the element that includes the specific role. Otherwise the calculation would overwrite the status tooltips rendered by Visual ARIA.</p>
+		                    </div>
+		                    <div id="supported-active-element-types" class="hd" tabindex="-1">
+		                        <h3><span> Supported Active Element Types</span></h3>
+		                    </div>
+		                    <div class="intro tal">
+		                        <ul>
+		                            <li> All HTML input, select, and button elements.</li>
+		                            <li> All HTML A elements that include an 'href' attribute.</li>
+		                            <li> All HTML5 progress elements.</li>
+		                            <li> All of the ARIA roles:
+		                                "button", "checkbox", "link", "searchbox", "scrollbar", "slider", "spinbutton", "switch", "textbox", "combobox", "option", "menuitem", "menuitemcheckbox", "menuitemradio", "radio", "tab", "treeitem"</li>
+		                        </ul>
+		                    </div>
+		                    <div id="notes-and-limitations" class="hd" tabindex="-1">
+		                        <h2><span> Notes and Limitations</span></h2>
+		                    </div>
+		                    <div class="intro tal">
+		                        <p><b> Since the HTML img, input, textarea, and progress elements cannot support the use of the :before and :after CSS pseudo elements, tooltip and border coloration may sometimes differ.</b></p>
+		                        <p> Please address any questions or support issues to the <a target="_blank" href="https://www.linkedin.com/grp/home?gid=4512178">Accessibility Innovators</a> LinkedIn group.</p>
+		                    </div>
+		                </article>
+	            	</div>
+				</main>
+			
+	            <aside>
+	                <section class="intro heading">
+	                    <h3 class="nopermalink">Related resources:</h3>
+						<div class="content">
+		                    <ul>
+		                        <li><a href="http://whatsock.com/training">The Accessibility Tree - A Training Guide for Advanced Web Development</a></li>
+		                        <li><a href="http://whatsock.com/training/matrices">The ARIA Role Conformance Matrices </a></li>
+		                    </ul>
+							<div class="notes">
+			                    <p>Visual ARIA is a cascading logic program written using CSS, which allows any sighted person to physically see the use of ARIA upon any public website, including all landmark and region roles, structural roles, live regions, pseudo interactive constructs, and all interactive widget roles mapped within ARIA 1.1.</p>
+			                    <p>Moreover, Visual ARIA provides real-time visual feedback as interactive widgets are focused to and updated, and will also convey when widget roles are not being interacted with properly due to incorrect focus management or improper role usage.</p>
+			                    <p>Visual ARIA is meant to address the global problem that ARIA is an invisible technology, making it extremely difficult for mainstream sighted developers to understand and implement properly with consistent reliability.</p>
+			                    <p>For example, when developers who implement ARIA receive no direct input to validate their efforts during the process of development, and who have little to no understanding of how Assistive Technologies work, they have no way to assess the value of what they are doing, nor is there any way for them to learn from their mistakes at the same time. This is the primary reason why the vast majority of mainstream sighted developers still cannot understand the proper use of ARIA; because there is nothing for them to see.</p>
+			                    <p>Visual ARIA solves this problem by providing direct visual feedback for sighted engineers during the agile development process. The source code for Visual ARIA is included within the <a target="_blank" href="https://github.com/accdc/aria-matrices">ARIA Role Conformance Matrices</a> GitHub project as core mapping algorithms, which can be downloaded for offline usage or behind corporate firewalls.</p>
+			                    <p>Please file relevant bugs on <a target="_blank" href="https://github.com/accdc/aria-matrices">The ARIA Role Conformance Matrices GitHub project page</a> if issues are discovered.</p>
+			                    <p>Sincerely,<a id="mlto" href="#" target="_blank">Bryan Garaventa</a></p>
+							</div>
+						</div>
+	                </section>
+	            </aside>
+			
+			</div> <!-- /wrapper -->
+			
+	        <footer>
+	        	<p class="topLink"><a href="#"><img src="img/up.png" title="Back to Top" alt="Back to Top" /></a></p>
+				<p class="copyright">&copy;<script type="text/javascript">document.write(new Date().getFullYear());</script> WhatSock. All rights reserved.</p>
+	        </footer>
+        </div>
+    </body>
+</html>
