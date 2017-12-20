@@ -6,7 +6,9 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 (function(){
 
-	// Set useOffline to true to enable the dynamic loader, and reference an https:// path to ensure that both secure and non-secure sites can be accessed by Visual ARIA.
+// Set useOffline=true to disable the dynamic loader,
+// or reference an https:// path to ensure that both secure and non-secure sites can be accessed by Visual ARIA when useOffline=false.
+// When useOffline=true, the roles.css file must be manually added to provide visual feedback within the same document where roles.js is being processed.
 	var useOffline = false,
 
 	// Base path for dynamic loading of individual CSS files.
