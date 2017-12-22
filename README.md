@@ -1,6 +1,17 @@
 # visual-aria - Revision 12/18/2017
 Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.
 
+Visual ARIA
+========
+
+ARIA stands for Accessible Rich Internet Applications, and is a technical specification published by the World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI).
+
+One of the greatest challenges regarding ARIA and how to reliably learn to use it, is that ARIA is an invisible technology. Mainstream observers literally cannot see where ARIA is applied, nor when issues are caused as a result of its use. As a result, the process of ARIA education is solely dictated by individuals, their singular understanding of assistive technologies, which browser they are using, which operating system they are using, and the current level of combined support between the operating system, the browser, and the assistive technology, all of which differ significantly when combined in different variations. Thus all ARIA education is skewed by personal subjectivity, perpetually propagating misinformation when key concepts are misunderstood. This makes ARIA education impossible to scale equally across all businesses, agencies, and academic institutions, because all such education is subjective (qualitative) and not objective (quantitative) as it must be.
+
+To solve this, there needs to be a scientifically precise methodology for learning ARIA that is not based on individual subjectivity, but rather, on that of role usage conformance according to the spec in order to achieve scalable objectivity for universal education. Visual ARIA solves this problem by reliably teaching the accessible use of ARIA through experimentation and experiential learning. Thus all mainstream observers can physically see the effects of ARIA usage equally, while also learning ARIA role usage conformance based on consistent testable mapping algorithms.
+
+Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.
+
 Distributed under the terms of the Open Source Initiative OSI - MIT License.
 
 Developed and maintained by: Bryan Garaventa https://www.linkedin.com/in/bgaraventa
