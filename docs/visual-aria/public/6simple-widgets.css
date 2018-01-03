@@ -3201,6 +3201,28 @@ font-size: .9rem; font-weight: 900;
 content: ' (focusable) [ARIA] Menu Button (Space or Enter should activate, Shift+F10 should open menu if different) aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
 
+a[href][role="button"][aria-pressed="false"][aria-expanded="true"], a[href][role="button"][aria-pressed="true"][aria-expanded="false"], button[aria-pressed="false"][aria-expanded="true"], button[aria-pressed="true"][aria-expanded="false"], *[role="button"][aria-pressed="false"][aria-expanded="true"], *[role="button"][aria-pressed="true"][aria-expanded="false"] {
+border: ridge thick red;
+}
+a[href][role="button"][aria-pressed="false"][aria-expanded="true"]:after, a[href][role="button"][aria-pressed="true"][aria-expanded="false"]:after, button[aria-pressed="false"][aria-expanded="true"]:after, button[aria-pressed="true"][aria-expanded="false"]:after, *[role="button"][aria-pressed="false"][aria-expanded="true"]:after, *[role="button"][aria-pressed="true"][aria-expanded="false"]:after {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Button (invalid, pressed and expanded states do not match) aria-pressed=' attr(aria-pressed) ' aria-expanded=' attr(aria-expanded) ' ';
+}
+*[data-ws-bm-node-name="img"][data-ws-bm-role="button"][data-ws-bm-aria-pressed="false"][data-ws-bm-aria-expanded="true"][data-ws-bm-tabindex]:before, *[data-ws-bm-node-name="img"][data-ws-bm-role="button"][data-ws-bm-aria-pressed="true"][data-ws-bm-aria-expanded="false"][data-ws-bm-tabindex]:before {
+display: table;
+height: auto; width: auto;
+position: relative; padding: 1px 0;
+background-color: #FFFFE5;
+color: red;
+font-size: .9rem; font-weight: 900;
+content: ' [ARIA] Button (invalid, pressed and expanded states do not match) aria-pressed=' attr(data-ws-bm-aria-pressed) ' aria-expanded=' attr(data-ws-bm-aria-expanded) ' ';
+}
+
 /*
 ARIA Checkbox
 Required attributes: aria-checked
