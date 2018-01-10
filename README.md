@@ -1,4 +1,4 @@
-# visual-aria - Revision 01/03/2018
+# visual-aria - CSS Revision 01/03/2018, JS 01/10/2018
 Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.
 
 Visual ARIA
@@ -25,7 +25,7 @@ The Visual ARIA browser extensions can be used to run Visual ARIA offline for lo
 * Mozilla: https://addons.mozilla.org/en-US/firefox/addon/visual-aria/
 * Chrome: https://chrome.google.com/webstore/detail/visual-aria/lhbmajchkkmakajkjenkchhnhbadmhmk?hl=en-GB
 
-Note: Visual ARIA browser extensions are developed by Laurence Lewis: https://www.linkedin.com/in/laurence-lewis-77520365/ 
+Note: Visual ARIA browser extensions are developed and maintained by Laurence Lewis: https://www.linkedin.com/in/laurence-lewis-77520365/ 
 Or on Twitter at https://twitter.com/Laurence_Lewis 
 Visual ARIA browser extension support or bug reports should be sent to extensions@a11ycats.com.au 
 

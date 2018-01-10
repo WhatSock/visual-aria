@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (CSS: 01/03/2018), JS last modified 12/18/2017
+Visual ARIA Bookmarklet (CSS: 01/03/2018), JS last modified 01/10/2018
 Copyright 2018 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -574,7 +574,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 			var accNames =
 				document.querySelectorAll(
-					'textarea, input, select, button, a[href], progress, *[role="button"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"], *[role="option"], *[role="menuitem"], *[role="menuitemcheckbox"], *[role="menuitemradio"], *[role="radio"], *[role="tab"], *[role="treeitem"]');
+					'textarea, input, select, button, a[href], progress, h1, h2, h3, h4, h5, h6, *[role="heading"], ul, ol, *[role="list"], *[role="directory"], table, th, *[role="table"], *[role="grid"], *[role="treegrid"], *[role="cell"], *[role="gridcell"], *[role="columnheader"], *[role="rowheader"], *[role="row"], *[role="alertdialog"], dialog, *[role="dialog"], header, *[role="banner"], aside, *[role="complementary"], footer, *[role="contentinfo"], form[aria-labelledby], form[aria-label], *[role="form"], main, *[role="main"], nav, *[role="navigation"], section[aria-labelledby], section[aria-label], *[role="region"], *[role="search"], *[role="article"], *[role="definition"], *[role="document"], *[role="feed"], *[role="figure"], *[role="img"], *[role="math"], *[role="note"], *[role="application"], *[role="log"], *[role="marquee"], *[role="status"], *[role="timer"], *[role="toolbar"], *[role="button"], *[role="group"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"], *[role="listbox"], *[role="option"], *[role="menu"], *[role="menubar"], *[role="menuitem"], *[role="menuitemcheckbox"], *[role="menuitemradio"], *[role="radiogroup"], *[role="radio"], *[role="tablist"], *[role="tabpanel"], *[role="tab"], *[role="tree"], *[role="treeitem"]');
 
 			for (var aN = 0; aN < accNames.length; aN++){
 				calcNames(accNames[aN]);
