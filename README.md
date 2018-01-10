@@ -17,6 +17,18 @@ Distributed under the terms of the Open Source Initiative OSI - MIT License.
 Developed and maintained by: Bryan Garaventa https://www.linkedin.com/in/bgaraventa
 Or on Twitter at https://twitter.com/bryanegaraventa
 
+Visual ARIA Browser Extensions
+-----
+
+The Visual ARIA browser extensions can be used to run Visual ARIA offline for local file access during agile development, or from within private intranets that don't allow public internet access.
+
+* Mozilla: https://addons.mozilla.org/en-US/firefox/addon/visual-aria/
+* Chrome: https://chrome.google.com/webstore/detail/visual-aria/lhbmajchkkmakajkjenkchhnhbadmhmk?hl=en-GB
+
+Note: Visual ARIA browser extensions are developed by Laurence Lewis: https://www.linkedin.com/in/laurence-lewis-77520365/ 
+Or on Twitter at https://twitter.com/Laurence_Lewis 
+Visual ARIA browser extension support or bug reports should be sent to extensions@a11ycats.com.au 
+
 Project home:
 -----
 
