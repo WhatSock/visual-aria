@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (CSS: 01/03/2018), JS last modified 01/10/2018
+Visual ARIA Bookmarklet (CSS: 01/03/2018), JS last modified 01/15/2018
 Copyright 2018 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -283,7 +283,12 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
 		var checkNames = function(){
 
-			var calcNames = function(node){
+			/*!
+			calcNames 1.1 (01/15/2018), compute the Name and Description property values for a DOM node
+			Returns an object with 'name' and 'desc' properties.
+			*/
+
+			var calcNames = function(node, fnc, preventSelfCSSRef){
 				if (!node || node.nodeType !== 1)
 					return;
 
@@ -346,13 +351,19 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 									};
 
 					// Prevent calculating name from content if the current node matches list2
-					if (lst2.roles.indexOf(',' + node.role + ',') >= 0 || lst2.names.indexOf(',' + node.name + ',') >= 0){
+					if (lst2.roles.indexOf(',' + node.role + ',') >= 0
+						|| (!node.role && lst2.names.indexOf(',' + node.name + ',') >= 0)){
 
 						// Override condition so name from content is sometimes included when the current node matches list3
-						if ((lst3.roles.indexOf(',' + node.role + ',') >= 0 || lst3.names.indexOf(',' + node.name + ',') >= 0) &&
-// Include name from content if the referenced node is the same as the current node, or if the current node is focusable, or if the referencing parent node matches those within list1
-						(refObj == o || node.focusable
-							|| (lst1.roles.indexOf(',' + pNode.role + ',') >= 0 || lst1.names.indexOf(',' + pNode.name + ',') >= 0))){
+						if ((lst3.roles.indexOf(',' + node.role + ',') >= 0
+							|| (!node.role && lst3.names.indexOf(',' + node.name + ',') >= 0)) &&
+						// Then include name from content
+						// if the referenced node is the same as the current node and if the current node is focusable,
+						((refObj == o && node.focusable) ||
+// or if the referenced node is not the same as the current node and if the referencing parent node matches those within list1.
+						(refObj != o && (lst1.roles.indexOf(',' + pNode.role + ',') >= 0
+							|| (!pNode.role && lst1.names.indexOf(',' + pNode.name + ',') >= 0))))){
+							// Override condition detected, so get name from content.
 							return false;
 						}
 
@@ -441,8 +452,9 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 							idRefNode = obj;
 						}
 
-					// Disabled in Visual ARIA to prevent self referencing by Visual ARIA tooltips
-					// cssOP = getCSSText(obj, null);
+						// Enabled in Visual ARIA to prevent self referencing by Visual ARIA tooltips
+						if (!preventSelfCSSRef)
+							cssOP = getCSSText(obj, null);
 					}
 
 					walkDOM(obj, function(o, refObj){
@@ -559,17 +571,21 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 				if (accName == accDesc)
 					accDesc = '';
 
-				if (' input textarea img progress '.indexOf(' ' + node.nodeName.toLowerCase() + ' ') !== -1){
-					node.parentNode.setAttribute('data-ws-bm-name-prop', accName);
+				var props =
+								{
+								name: accName,
+								desc: accDesc
+								};
 
-					node.parentNode.setAttribute('data-ws-bm-desc-prop', accDesc);
-				}
+				if (fnc && typeof fnc == 'function')
+					return fnc.apply(node,
+									[
+									node,
+									props
+									]);
 
-				else{
-					node.setAttribute('data-ws-bm-name-prop', accName);
-
-					node.setAttribute('data-ws-bm-desc-prop', accDesc);
-				}
+				else
+					return props;
 			};
 
 			var accNames =
@@ -577,7 +593,19 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 					'textarea, input, select, button, a[href], progress, *[role="button"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"], *[role="option"], *[role="menuitem"], *[role="menuitemcheckbox"], *[role="menuitemradio"], *[role="radio"], *[role="tab"], *[role="treeitem"], h1, h2, h3, h4, h5, h6, *[role="heading"], ul[aria-labelledby], ol[aria-labelledby], *[role="list"][aria-labelledby], *[role="directory"][aria-labelledby], ul[aria-label], ol[aria-label], *[role="list"][aria-label], *[role="directory"][aria-label], table[aria-labelledby], *[role="table"][aria-labelledby], *[role="grid"][aria-labelledby], *[role="treegrid"][aria-labelledby], table[aria-label], *[role="table"][aria-label], *[role="grid"][aria-label], *[role="treegrid"][aria-label], *[role="row"][aria-labelledby], *[role="row"][aria-label], *[role="cell"], *[role="gridcell"], th, *[role="columnheader"], *[role="rowheader"], *[role="alertdialog"][aria-labelledby], dialog[aria-labelledby], *[role="dialog"][aria-labelledby], *[role="alertdialog"][aria-label], dialog[aria-label], *[role="dialog"][aria-label], header[aria-labelledby], *[role="banner"][aria-labelledby], aside[aria-labelledby], *[role="complementary"][aria-labelledby], footer[aria-labelledby], *[role="contentinfo"][aria-labelledby], header[aria-label], *[role="banner"][aria-label], aside[aria-label], *[role="complementary"][aria-label], footer[aria-label], *[role="contentinfo"][aria-label], form[aria-labelledby], *[role="form"][aria-labelledby], form[aria-label], *[role="form"][aria-label], main[aria-labelledby], *[role="main"][aria-labelledby], nav[aria-labelledby], *[role="navigation"][aria-labelledby], main[aria-label], *[role="main"][aria-label], nav[aria-label], *[role="navigation"][aria-label], section[aria-labelledby], section[aria-label], *[role="region"][aria-labelledby], *[role="search"][aria-labelledby], *[role="article"][aria-labelledby], *[role="definition"][aria-labelledby], *[role="document"][aria-labelledby], *[role="feed"][aria-labelledby], *[role="figure"][aria-labelledby], *[role="img"][aria-labelledby], *[role="math"][aria-labelledby], *[role="note"][aria-labelledby], *[role="application"][aria-labelledby], *[role="region"][aria-label], *[role="search"][aria-label], *[role="article"][aria-label], *[role="definition"][aria-label], *[role="document"][aria-label], *[role="feed"][aria-label], *[role="figure"][aria-label], *[role="img"][aria-label], *[role="math"][aria-label], *[role="note"][aria-label], *[role="application"][aria-label], *[role="log"][aria-labelledby], *[role="marquee"][aria-labelledby], *[role="status"][aria-labelledby], *[role="timer"][aria-labelledby], *[role="log"][aria-label], *[role="marquee"][aria-label], *[role="status"][aria-label], *[role="timer"][aria-label], *[role="toolbar"][aria-labelledby], *[role="group"][aria-labelledby], *[role="listbox"][aria-labelledby], *[role="menu"][aria-labelledby], *[role="menubar"][aria-labelledby], *[role="toolbar"][aria-label], *[role="group"][aria-label], *[role="listbox"][aria-label], *[role="menu"][aria-label], *[role="menubar"][aria-label], *[role="radiogroup"][aria-labelledby], *[role="tree"][aria-labelledby], *[role="tablist"][aria-labelledby], *[role="tabpanel"][aria-labelledby], *[role="radiogroup"][aria-label], *[role="tree"][aria-label], *[role="tablist"][aria-label], *[role="tabpanel"][aria-label]');
 
 			for (var aN = 0; aN < accNames.length; aN++){
-				calcNames(accNames[aN]);
+				calcNames(accNames[aN], function(node, props){
+					if (' input textarea img progress '.indexOf(' ' + node.nodeName.toLowerCase() + ' ') !== -1){
+						node.parentNode.setAttribute('data-ws-bm-name-prop', props.name);
+
+						node.parentNode.setAttribute('data-ws-bm-desc-prop', props.desc);
+					}
+
+					else{
+						node.setAttribute('data-ws-bm-name-prop', props.name);
+
+						node.setAttribute('data-ws-bm-desc-prop', props.desc);
+					}
+				}, true);
 			}
 
 			setTimeout(checkNames, 5000);
