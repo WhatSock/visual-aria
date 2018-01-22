@@ -772,6 +772,12 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Menu (missing aria-activedescendant, which must reference child role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
 }
+*[role="menu"]:focus *[role="menuitem"], *[role="menu"]:focus *[role="menuitemcheckbox"], *[role="menu"]:focus *[role="menuitemradio"] {
+border: ridge thick orange;
+}
+*[role="menu"]:focus *[role="menuitem"]:after, *[role="menu"]:focus *[role="menuitemcheckbox"]:after, *[role="menu"]:focus *[role="menuitemradio"]:after {
+content: none;
+}
 *[role="menu"][aria-activedescendant]:focus {
 border: ridge thick green;
 }
@@ -1501,6 +1507,12 @@ background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Menubar (missing aria-activedescendant, which must reference child role=menuitem, role=menuitemcheckbox, or role=menuitemradio) ';
+}
+*[role="menubar"]:focus *[role="menuitem"], *[role="menubar"]:focus *[role="menuitemcheckbox"], *[role="menubar"]:focus *[role="menuitemradio"] {
+border: ridge thick orange;
+}
+*[role="menubar"]:focus *[role="menuitem"]:after, *[role="menubar"]:focus *[role="menuitemcheckbox"]:after, *[role="menubar"]:focus *[role="menuitemradio"]:after {
+content: none;
 }
 *[role="menubar"][aria-activedescendant]:focus {
 border: ridge thick green;

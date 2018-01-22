@@ -8360,6 +8360,12 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Listbox (Up and Down must change aria-activedescendant) ';
 }
+*[role="listbox"]:focus *[role="option"] {
+border: ridge thick orange;
+}
+*[role="listbox"]:focus *[role="option"]:after {
+content: none;
+}
 *[role="listbox"][aria-activedescendant]:focus:before {
 display: table;
 height: auto; width: auto;

@@ -4546,6 +4546,12 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Tablist (missing aria-activedescendant, which must reference child role=tab) ';
 }
+*[role="tablist"]:focus *[role="tab"] {
+border: ridge thick orange;
+}
+*[role="tablist"]:focus *[role="tab"]:after {
+content: none;
+}
 
 *[role="tablist"][aria-activedescendant]:focus {
 border: ridge thick green;

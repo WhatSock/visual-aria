@@ -52079,6 +52079,12 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Tree (missing aria-activedescendant, which must reference child role=treeitem) ';
 }
+*[role="tree"]:focus *[role="treeitem"] {
+border: ridge thick orange;
+}
+*[role="tree"]:focus *[role="treeitem"]:after {
+content: none;
+}
 
 *[role="tree"][aria-activedescendant]:focus {
 border: ridge thick green;

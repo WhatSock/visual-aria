@@ -40124,6 +40124,12 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (editable) [ARIA] Treegrid (missing aria-activedescendant, which must reference child role=row, role=gridcell, role=rowheader, or role=columnheader) ';
 }
+*[role="treegrid"]:focus *[role="rowheader"], *[role="treegrid"]:focus *[role="gridcell"], *[role="treegrid"]:focus *[role="columnheader"] {
+border: ridge thick orange;
+}
+*[role="treegrid"]:focus *[role="rowheader"]:after, *[role="treegrid"]:focus *[role="gridcell"]:after, *[role="treegrid"]:focus *[role="columnheader"]:after {
+content: none;
+}
 
 *[role="treegrid"][aria-activedescendant]:focus {
 border: ridge thick green;
@@ -42735,6 +42741,12 @@ background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (editable) [ARIA] Grid (missing aria-activedescendant, which must reference child role=row, role=gridcell, role=rowheader, or role=columnheader) ';
+}
+*[role="grid"]:focus *[role="rowheader"], *[role="grid"]:focus *[role="gridcell"], *[role="grid"]:focus *[role="columnheader"] {
+border: ridge thick orange;
+}
+*[role="grid"]:focus *[role="rowheader"]:after, *[role="grid"]:focus *[role="gridcell"]:after, *[role="grid"]:focus *[role="columnheader"]:after {
+content: none;
 }
 
 *[role="grid"][aria-activedescendant]:focus {

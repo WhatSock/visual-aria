@@ -1667,6 +1667,12 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Radiogroup (missing aria-activedescendant, which must reference child role=radio) ';
 }
+*[role="radiogroup"]:focus *[role="radio"] {
+border: ridge thick orange;
+}
+*[role="radiogroup"]:focus *[role="radio"]:after {
+content: none;
+}
 *[role="radiogroup"][aria-activedescendant][aria-label]:focus, *[role="radiogroup"][aria-activedescendant][aria-labelledby]:focus {
 border: ridge thick green;
 }
