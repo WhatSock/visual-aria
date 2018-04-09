@@ -1,5 +1,5 @@
 
-a[href][aria-expanded="false"]:after {
+a[href][aria-expanded="false"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8,7 +8,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' [ARIA] (collapsed) Link ';
 }
-a[href][aria-expanded="true"]:after {
+a[href][aria-expanded="true"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -21,7 +21,7 @@ content: ' [ARIA] (expanded) Link ';
 a[href] *:focus {
 border: ridge thick red;
 }
-a[href] *:focus:after {
+a[href] *:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -31,7 +31,7 @@ font-size: .9rem; font-weight: 900;
 content: ' [ARIA] Link (invalid nesting, role=link cannot include embedded active elements) ';
 }
 
-a[href][aria-expanded="false"]:focus:after {
+a[href][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -41,7 +41,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (collapsed) Link (Enter should activate) ';
 }
-a[href][aria-expanded="true"]:focus:after {
+a[href][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -52,7 +52,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (expanded) Link (Enter should activate) ';
 }
 
-a[href][aria-disabled="true"]:after {
+a[href][aria-disabled="true"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -61,7 +61,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) [ARIA] Link ';
 }
-a[href][aria-disabled="true"][aria-expanded="false"]:after {
+a[href][aria-disabled="true"][aria-expanded="false"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -70,7 +70,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) [ARIA] (collapsed) Link ';
 }
-a[href][aria-disabled="true"][aria-expanded="true"]:after {
+a[href][aria-disabled="true"][aria-expanded="true"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -82,7 +82,7 @@ content: ' (disabled) [ARIA] (expanded) Link ';
 a[href][aria-disabled="true"]:focus {
 border: ridge thick orange;
 }
-a[href][aria-disabled="true"]:focus:after {
+a[href][aria-disabled="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -92,7 +92,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) [ARIA] Link ';
 }
-a[href][aria-disabled="true"][aria-expanded="false"]:focus:after {
+a[href][aria-disabled="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -102,7 +102,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) [ARIA] (collapsed) Link ';
 }
-a[href][aria-disabled="true"][aria-expanded="true"]:focus:after {
+a[href][aria-disabled="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -116,7 +116,7 @@ content: ' (focused) (disabled) [ARIA] (expanded) Link ';
 a[href][aria-haspopup="true"] {
 border: ridge thick orange;
 }
-a[href][aria-haspopup="true"]:after {
+a[href][aria-haspopup="true"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -125,7 +125,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (has-menu) [ARIA] Link ';
 }
-a[href][aria-haspopup="true"][aria-expanded="false"]:after {
+a[href][aria-haspopup="true"][aria-expanded="false"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -134,7 +134,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (has-menu) [ARIA] (collapsed) Link ';
 }
-a[href][aria-haspopup="true"][aria-expanded="true"]:after {
+a[href][aria-haspopup="true"][aria-expanded="true"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -146,7 +146,7 @@ content: ' (has-menu) [ARIA] (expanded) Link ';
 a[href][aria-haspopup="true"]:focus {
 border: ridge thick green;
 }
-a[href][aria-haspopup="true"]:focus:after {
+a[href][aria-haspopup="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -156,7 +156,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Link (Enter should activate, Shift+F10 should open menu if different) ';
 }
-a[href][aria-haspopup="true"][aria-expanded="false"]:focus:after {
+a[href][aria-haspopup="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -166,7 +166,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (collapsed) Link (Enter should activate, Shift+F10 should open menu if different) ';
 }
-a[href][aria-haspopup="true"][aria-expanded="true"]:focus:after {
+a[href][aria-haspopup="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -180,7 +180,7 @@ content: ' (focused) (has-menu) [ARIA] (expanded) Link (Enter should activate, S
 a[href][aria-haspopup="true"][aria-disabled="true"] {
 border: ridge thick green;
 }
-a[href][aria-haspopup="true"][aria-disabled="true"]:after {
+a[href][aria-haspopup="true"][aria-disabled="true"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -189,7 +189,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (has-menu) [ARIA] Link ';
 }
-a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="false"]:after {
+a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="false"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -198,7 +198,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (has-menu) [ARIA] (collapsed) Link ';
 }
-a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="true"]:after {
+a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="true"]:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -210,7 +210,7 @@ content: ' (disabled) (has-menu) [ARIA] (expanded) Link ';
 a[href][aria-haspopup="true"][aria-disabled="true"]:focus {
 border: ridge thick orange;
 }
-a[href][aria-haspopup="true"][aria-disabled="true"]:focus:after {
+a[href][aria-haspopup="true"][aria-disabled="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -220,7 +220,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) (has-menu) [ARIA] Link ';
 }
-a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="false"]:focus:after {
+a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -230,7 +230,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) (has-menu) [ARIA] (collapsed) Link ';
 }
-a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="true"]:focus:after {
+a[href][aria-haspopup="true"][aria-disabled="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -241,7 +241,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) (has-menu) [ARIA] (expanded) Link ';
 }
 
-a[href][aria-label]:focus:after {
+a[href][aria-label]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -251,7 +251,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Link (Enter should activate) aria-label=' attr(aria-label) ' ';
 }
-a[href][aria-label][aria-expanded="false"]:focus:after {
+a[href][aria-label][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -261,7 +261,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (collapsed) Link (Enter should activate) aria-label=' attr(aria-label) ' ';
 }
-a[href][aria-label][aria-expanded="true"]:focus:after {
+a[href][aria-label][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -272,7 +272,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (expanded) Link (Enter should activate) aria-label=' attr(aria-label) ' ';
 }
 
-a[href][aria-label][aria-haspopup="true"]:focus:after {
+a[href][aria-label][aria-haspopup="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -282,7 +282,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Link (Enter should activate, Shift+F10 should open menu if different) aria-label=' attr(aria-label) ' ';
 }
-a[href][aria-label][aria-haspopup="true"][aria-expanded="false"]:focus:after {
+a[href][aria-label][aria-haspopup="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -292,7 +292,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (collapsed) Link (Enter should activate, Shift+F10 should open menu if different) aria-label=' attr(aria-label) ' ';
 }
-a[href][aria-label][aria-haspopup="true"][aria-expanded="true"]:focus:after {
+a[href][aria-label][aria-haspopup="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -303,7 +303,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (expanded) Link (Enter should activate, Shift+F10 should open menu if different) aria-label=' attr(aria-label) ' ';
 }
 
-a[href][aria-labelledby]:focus:after {
+a[href][aria-labelledby]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -313,7 +313,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Link (Enter should activate) aria-labelledby=' attr(aria-labelledby) ' ';
 }
-a[href][aria-labelledby][aria-expanded="false"]:focus:after {
+a[href][aria-labelledby][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -323,7 +323,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (collapsed) Link (Enter should activate) aria-labelledby=' attr(aria-labelledby) ' ';
 }
-a[href][aria-labelledby][aria-expanded="true"]:focus:after {
+a[href][aria-labelledby][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -334,7 +334,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (expanded) Link (Enter should activate) aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
-a[href][aria-labelledby][aria-haspopup="true"]:focus:after {
+a[href][aria-labelledby][aria-haspopup="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -344,7 +344,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Link (Enter should activate, Shift+F10 should open menu if different) aria-labelledby=' attr(aria-labelledby) ' ';
 }
-a[href][aria-labelledby][aria-haspopup="true"][aria-expanded="false"]:focus:after {
+a[href][aria-labelledby][aria-haspopup="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -354,7 +354,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (collapsed) Link (Enter should activate, Shift+F10 should open menu if different) aria-labelledby=' attr(aria-labelledby) ' ';
 }
-a[href][aria-labelledby][aria-haspopup="true"][aria-expanded="true"]:focus:after {
+a[href][aria-labelledby][aria-haspopup="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -365,7 +365,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (expanded) Link (Enter should activate, Shift+F10 should open menu if different) aria-labelledby=' attr(aria-labelledby) ' ';
 }
 
-a[href][aria-describedby]:focus:after {
+a[href][aria-describedby]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -375,7 +375,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Link (Enter should activate) aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-expanded="false"]:focus:after {
+a[href][aria-describedby][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -385,7 +385,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (collapsed) Link (Enter should activate) aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-expanded="true"]:focus:after {
+a[href][aria-describedby][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -396,7 +396,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (expanded) Link (Enter should activate) aria-describedby=' attr(aria-describedby) ' ';
 }
 
-a[href][aria-describedby][aria-haspopup="true"]:focus:after {
+a[href][aria-describedby][aria-haspopup="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -406,7 +406,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Link (Enter should activate, Shift+F10 should open menu if different) aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-haspopup="true"][aria-expanded="false"]:focus:after {
+a[href][aria-describedby][aria-haspopup="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -416,7 +416,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (collapsed) Link (Enter should activate, Shift+F10 should open menu if different) aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-haspopup="true"][aria-expanded="true"]:focus:after {
+a[href][aria-describedby][aria-haspopup="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -427,7 +427,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (expanded) Link (Enter should activate, Shift+F10 should open menu if different) aria-describedby=' attr(aria-describedby) ' ';
 }
 
-a[href][aria-describedby][aria-label]:focus:after {
+a[href][aria-describedby][aria-label]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -437,7 +437,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Link (Enter should activate) aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-label][aria-expanded="false"]:focus:after {
+a[href][aria-describedby][aria-label][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -447,7 +447,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (collapsed) Link (Enter should activate) aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-label][aria-expanded="true"]:focus:after {
+a[href][aria-describedby][aria-label][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -458,7 +458,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (expanded) Link (Enter should activate) aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
 
-a[href][aria-describedby][aria-label][aria-haspopup="true"]:focus:after {
+a[href][aria-describedby][aria-label][aria-haspopup="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -468,7 +468,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Link (Enter should activate, Shift+F10 should open menu if different) aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-label][aria-haspopup="true"][aria-expanded="false"]:focus:after {
+a[href][aria-describedby][aria-label][aria-haspopup="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -478,7 +478,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (collapsed) Link (Enter should activate, Shift+F10 should open menu if different) aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-label][aria-haspopup="true"][aria-expanded="true"]:focus:after {
+a[href][aria-describedby][aria-label][aria-haspopup="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -489,7 +489,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (expanded) Link (Enter should activate, Shift+F10 should open menu if different) aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
 
-a[href][aria-describedby][aria-labelledby]:focus:after {
+a[href][aria-describedby][aria-labelledby]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -499,7 +499,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Link (Enter should activate) aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-labelledby][aria-expanded="false"]:focus:after {
+a[href][aria-describedby][aria-labelledby][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -509,7 +509,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (collapsed) Link (Enter should activate) aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-labelledby][aria-expanded="true"]:focus:after {
+a[href][aria-describedby][aria-labelledby][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -520,7 +520,7 @@ font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] (expanded) Link (Enter should activate) aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
 
-a[href][aria-describedby][aria-labelledby][aria-haspopup="true"]:focus:after {
+a[href][aria-describedby][aria-labelledby][aria-haspopup="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -530,7 +530,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Link (Enter should activate, Shift+F10 should open menu if different) aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-expanded="false"]:focus:after {
+a[href][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-expanded="false"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -540,7 +540,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] (collapsed) Link (Enter should activate, Shift+F10 should open menu if different) aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-a[href][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-expanded="true"]:focus:after {
+a[href][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-expanded="true"]:focus:not(a[role]):after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
