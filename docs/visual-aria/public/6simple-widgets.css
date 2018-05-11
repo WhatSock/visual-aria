@@ -11372,16 +11372,6 @@ content: none;
 content: none;
 }
 
-#ws-bm-aria-matrices-lnk a:before {
-content: ' ? ';
-}
-#ws-bm-aria-matrices-lnk:hover a:before {
-content: ' ARIA Role Matrices ';
-}
-#ws-bm-aria-matrices-lnk a:focus:before {
-content: ' ARIA Role Matrices ';
-}
-
 *[data-ws-bm-ad-match] {
 outline: 3px green inset;
 background-color: #FFFFE5;

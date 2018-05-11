@@ -664,16 +664,6 @@ content: none;
 content: none;
 }
 
-#ws-bm-aria-matrices-lnk a:before {
-content: ' ? ';
-}
-#ws-bm-aria-matrices-lnk:hover a:before {
-content: ' ARIA Role Matrices ';
-}
-#ws-bm-aria-matrices-lnk a:focus:before {
-content: ' ARIA Role Matrices ';
-}
-
 /*
 ARIA Listbox
 Required attributes: aria-activedescendant must be set on the role="listbox" element if focusable to reference the ID of its child role="option" element;
