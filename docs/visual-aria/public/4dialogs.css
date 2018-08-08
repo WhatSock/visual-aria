@@ -39,7 +39,7 @@ content: ' [ARIA] Application (WARNING: Changes screen reader behavior, use with
 
 /*
 ARIA Alertdialog
-Required attributes: aria-label or aria-labelledby, and aria-describedby
+Required attributes: aria-label or aria-labelledby, and optionally aria-describedby
 Note: When rendered, focus must move to an active element within the Alertdialog. If modal, aria-modal="true" must be set and the forward and backward tab order must be confined to active elements within the Alertdialog container. When closed, focus must return to the triggering element if applicable.
 http://whatsock.com/training/matrices/#alertdialog
 */
@@ -54,12 +54,12 @@ position: relative; padding: 1px 0;
 background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
-content: ' [ARIA] Alertdialog (missing required attributes) ';
+content: ' [ARIA] Alertdialog (missing required attributes such as aria-label or aria-labelledby) ';
 }
-*[role="alertdialog"][aria-label][aria-describedby], *[role="alertdialog"][aria-labelledby][aria-describedby] {
+*[role="alertdialog"][aria-label], *[role="alertdialog"][aria-labelledby] {
 border: ridge thick green;
 }
-*[role="alertdialog"][aria-label][aria-describedby]:before, *[role="alertdialog"][aria-labelledby][aria-describedby]:before {
+*[role="alertdialog"][aria-label]:before, *[role="alertdialog"][aria-labelledby]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -68,7 +68,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' [ARIA] (non-modal) Alertdialog (ensure focus is set to an element within the Alertdialog) ';
 }
-*[role="alertdialog"][aria-label][aria-describedby][aria-modal="true"]:before, *[role="alertdialog"][aria-labelledby][aria-describedby][aria-modal="true"]:before {
+*[role="alertdialog"][aria-label][aria-modal="true"]:before, *[role="alertdialog"][aria-labelledby][aria-modal="true"]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -80,7 +80,7 @@ content: ' [ARIA] (modal) Alertdialog (ensure focus is set to an internal elemen
 
 /*
 ARIA Dialog
-Required attributes: aria-label or aria-labelledby, and aria-describedby
+Required attributes: aria-label or aria-labelledby, and optionally aria-describedby
 Note: When rendered, focus must move to an active element within the Dialog. If modal, aria-modal="true" must be set and the forward and backward tab order must be confined to active elements within the Dialog container. When closed, focus must return to the triggering element if applicable.
 http://whatsock.com/training/matrices/#dialog
 */
@@ -95,12 +95,12 @@ position: relative; padding: 1px 0;
 background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
-content: ' [ARIA] Dialog (missing required attributes) ';
+content: ' [ARIA] Dialog (missing required attributes such as aria-label or aria-labelledby) ';
 }
-*[role="dialog"][aria-label][aria-describedby], *[role="dialog"][aria-labelledby][aria-describedby] {
+*[role="dialog"][aria-label], *[role="dialog"][aria-labelledby] {
 border: ridge thick green;
 }
-*[role="dialog"][aria-label][aria-describedby]:before, *[role="dialog"][aria-labelledby][aria-describedby]:before {
+*[role="dialog"][aria-label]:before, *[role="dialog"][aria-labelledby]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -109,7 +109,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' [ARIA] (non-modal) Dialog (ensure focus is set to an element within the Dialog) ';
 }
-*[role="dialog"][aria-label][aria-describedby][aria-modal="true"]:before, *[role="dialog"][aria-labelledby][aria-describedby][aria-modal="true"]:before {
+*[role="dialog"][aria-label][aria-modal="true"]:before, *[role="dialog"][aria-labelledby][aria-modal="true"]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
