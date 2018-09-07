@@ -657,10 +657,10 @@ font-size: .9rem; font-weight: 900;
 content: ' accDescription: \0022' attr(data-ws-bm-desc-prop) '\0022 ';
 }
 
-#ws-bm-aria-matrices-lnk a[data-ws-bm-name-prop]:hover:before {
+#ws-bm-aria-matrices-lnk a:hover:before {
 content: none;
 }
-#ws-bm-aria-matrices-lnk a[data-ws-bm-desc-prop]:hover:after {
+#ws-bm-aria-matrices-lnk a:hover:after {
 content: none;
 }
 
