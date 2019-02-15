@@ -1,6 +1,6 @@
 /*!
-Visual ARIA Bookmarklet (CSS: 08/06/2018), JS last modified 09/11/2018
-Copyright 2018 Bryan Garaventa
+Visual ARIA Bookmarklet (CSS: 08/06/2018), JS last modified 02/14/2019, includes AccName Prototype 2.18
+Copyright 2019 Bryan Garaventa
 https://github.com/accdc/visual-aria
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
@@ -17,21 +17,20 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
     // Set millisecond interval for dynamically loading supporting CSS files and performing the naming calculation for widget roles
     msInterval = 2000;
 
-  // Promise pollyfill
   /*!
- * @overview es6-promise - a tiny implementation of Promises/A+.
- * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
- * @license   Licensed under MIT license
- *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
- * @version   v4.2.4+314e4831
- */
+   * @overview es6-promise - a tiny implementation of Promises/A+.
+   * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
+   * @license   Licensed under MIT license
+   *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
+   * @version   v4.2.4+314e4831
+   */
 
   (function(global, factory) {
     typeof exports === "object" && typeof module !== "undefined"
       ? (module.exports = factory())
       : typeof define === "function" && define.amd
-        ? define(factory)
-        : (global.ES6Promise = factory());
+      ? define(factory)
+      : (global.ES6Promise = factory());
   })(this, function() {
     "use strict";
 
@@ -1643,7 +1642,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
     var checkNames = function() {
       /*
-AccName Prototype 2.16, compute the Name and Description property values for a DOM node
+AccName Prototype 2.18, compute the Name and Description property values for a DOM node
 https://github.com/whatsock/w3c-alternative-text-computation
 */
       var calcNames = function(node, fnc, preventVisualARIASelfCSSRef) {
@@ -1651,7 +1650,7 @@ https://github.com/whatsock/w3c-alternative-text-computation
         if (!node || node.nodeType !== 1) {
           return props;
         }
-        var topNode = node;
+        var rootNode = node;
 
         // Track nodes to prevent duplicate node reference parsing.
         var nodes = [];
@@ -1715,7 +1714,7 @@ https://github.com/whatsock/w3c-alternative-text-computation
             // Otherwise process list2 to identify roles to ignore processing name from content.
             else if (
               inList(node, list2) ||
-              (node === topNode && !inList(node, list1))
+              (node === rootNode && !inList(node, list1))
             ) {
               return true;
             } else {
@@ -1813,9 +1812,9 @@ https://github.com/whatsock/w3c-alternative-text-computation
               }
             }
             res.name += fResult.owns || "";
-            if (!trim(res.name) && trim(fResult.title)) {
+            if (rootNode === node && !trim(res.name) && trim(fResult.title)) {
               res.name = addSpacing(fResult.title);
-            } else {
+            } else if (refNode === node && rootNode === node) {
               res.title = addSpacing(fResult.title);
             }
             if (trim(fResult.desc)) {
@@ -1845,7 +1844,7 @@ https://github.com/whatsock/w3c-alternative-text-computation
                 nodesToIgnoreValues &&
                 nodesToIgnoreValues.length &&
                 nodesToIgnoreValues.indexOf(node) !== -1 &&
-                node === topNode &&
+                node === rootNode &&
                 node !== refNode
                   ? true
                   : false;
@@ -2095,48 +2094,31 @@ https://github.com/whatsock/w3c-alternative-text-computation
                       ? true
                       : false;
 
-                  if (implicitLabel && explicitLabel && isImplicitFirst) {
-                    // Check for blank value, since whitespace chars alone are not valid as a name
-                    name = trim(
-                      walk(implicitLabel, true, skip, [node], false, {
-                        ref: ownedBy,
-                        top: implicitLabel
-                      }).name +
-                        " " +
-                        walk(explicitLabel, true, skip, [node], false, {
-                          ref: ownedBy,
-                          top: explicitLabel
-                        }).name
-                    );
-                  } else if (explicitLabel && implicitLabel) {
-                    // Check for blank value, since whitespace chars alone are not valid as a name
-                    name = trim(
-                      walk(explicitLabel, true, skip, [node], false, {
-                        ref: ownedBy,
-                        top: explicitLabel
-                      }).name +
-                        " " +
-                        walk(implicitLabel, true, skip, [node], false, {
-                          ref: ownedBy,
-                          top: implicitLabel
-                        }).name
-                    );
-                  } else if (explicitLabel) {
-                    // Check for blank value, since whitespace chars alone are not valid as a name
-                    name = trim(
+                  if (explicitLabel) {
+                    var eLblName = trim(
                       walk(explicitLabel, true, skip, [node], false, {
                         ref: ownedBy,
                         top: explicitLabel
                       }).name
                     );
-                  } else if (implicitLabel) {
-                    // Check for blank value, since whitespace chars alone are not valid as a name
-                    name = trim(
+                  }
+                  if (implicitLabel && implicitLabel !== explicitLabel) {
+                    var iLblName = trim(
                       walk(implicitLabel, true, skip, [node], false, {
                         ref: ownedBy,
                         top: implicitLabel
                       }).name
                     );
+                  }
+
+                  if (iLblName && eLblName && isImplicitFirst) {
+                    name = iLblName + " " + eLblName;
+                  } else if (eLblName && iLblName) {
+                    name = eLblName + " " + iLblName;
+                  } else if (eLblName) {
+                    name = eLblName;
+                  } else if (iLblName) {
+                    name = iLblName;
                   }
 
                   if (trim(name)) {
@@ -2215,15 +2197,16 @@ https://github.com/whatsock/w3c-alternative-text-computation
                   result.desc = btnValue;
                 }
 
-                // Otherwise, if current node is non-presentational and includes a non-empty title attribute and is not a separate embedded form field, store title attribute value as the accessible name if name is still empty, or the description if not.
+                // Otherwise, if current node is the same as rootNode and is non-presentational and includes a non-empty title attribute and is not a separate embedded form field, store title attribute value as the accessible name if name is still empty, or the description if not.
                 if (
+                  node === rootNode &&
                   !rolePresentation &&
                   trim(nTitle) &&
                   !isSeparatChildFormField
                 ) {
-                  if (node === refNode) {
-                    result.title = trim(nTitle);
-                  }
+                  if (!hasName) name = trim(nTitle);
+                  else result.title = trim(nTitle);
+                  if (trim(name)) hasName = true;
                 }
 
                 // Check for non-empty value of aria-owns, follow each ID ref, then process with same naming computation.
