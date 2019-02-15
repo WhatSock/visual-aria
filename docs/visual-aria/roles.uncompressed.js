@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (CSS: 08/06/2018), JS last modified 02/14/2019, includes AccName Prototype 2.18
+Visual ARIA Bookmarklet (CSS: 08/06/2018), JS last modified 02/14/2019, includes AccName Prototype 2.19
 Copyright 2019 Bryan Garaventa
 https://github.com/accdc/visual-aria
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
@@ -1642,7 +1642,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
     var checkNames = function() {
       /*
-AccName Prototype 2.18, compute the Name and Description property values for a DOM node
+AccName Prototype 2.19, compute the Name and Description property values for a DOM node
 https://github.com/whatsock/w3c-alternative-text-computation
 */
       var calcNames = function(node, fnc, preventVisualARIASelfCSSRef) {
@@ -1812,12 +1812,16 @@ https://github.com/whatsock/w3c-alternative-text-computation
               }
             }
             res.name += fResult.owns || "";
-            if (rootNode === node && !trim(res.name) && trim(fResult.title)) {
+            if (
+              rootNode === refNode &&
+              !trim(res.name) &&
+              trim(fResult.title)
+            ) {
               res.name = addSpacing(fResult.title);
-            } else if (refNode === node && rootNode === node) {
+            } else if (rootNode === refNode && trim(fResult.title)) {
               res.title = addSpacing(fResult.title);
             }
-            if (trim(fResult.desc)) {
+            if (rootNode === refNode && trim(fResult.desc)) {
               res.title = addSpacing(fResult.desc);
             }
             if (nodeIsBlock || fResult.isWidget) {
@@ -2204,9 +2208,7 @@ https://github.com/whatsock/w3c-alternative-text-computation
                   trim(nTitle) &&
                   !isSeparatChildFormField
                 ) {
-                  if (!hasName) name = trim(nTitle);
-                  else result.title = trim(nTitle);
-                  if (trim(name)) hasName = true;
+                  result.title = trim(nTitle);
                 }
 
                 // Check for non-empty value of aria-owns, follow each ID ref, then process with same naming computation.
