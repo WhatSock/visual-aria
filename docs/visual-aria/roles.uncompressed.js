@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (CSS: 08/06/2018), JS last modified 02/14/2019, includes AccName Prototype 2.19
+Visual ARIA Bookmarklet (CSS: 08/06/2018), JS last modified 02/18/2019, includes AccName Prototype 2.20
 Copyright 2019 Bryan Garaventa
 https://github.com/accdc/visual-aria
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
@@ -1642,7 +1642,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
 
     var checkNames = function() {
       /*
-AccName Prototype 2.19, compute the Name and Description property values for a DOM node
+AccName Prototype 2.20, compute the Name and Description property values for a DOM node
 https://github.com/whatsock/w3c-alternative-text-computation
 */
       var calcNames = function(node, fnc, preventVisualARIASelfCSSRef) {
@@ -2508,7 +2508,7 @@ https://github.com/whatsock/w3c-alternative-text-computation
 
         var isHidden = function(node, refNode) {
           var hidden = function(node) {
-            if (node.nodeType !== 1 || node === refNode) {
+            if (!node || node.nodeType !== 1 || node === refNode) {
               return false;
             }
             if (node.getAttribute("aria-hidden") === "true") {

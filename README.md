@@ -1,4 +1,4 @@
-# visual-aria - CSS Revision 08/06/2018, JS 02/14/2019, includes AccName Prototype 2.19
+# visual-aria - CSS Revision 08/06/2018, JS 02/18/2019, includes AccName Prototype 2.20
 Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.
 
 Includes the latest version of the AccName Prototype for auto-detection of accessible names and descriptions in accordance with the AccName spec. For further details, visit: https://github.com/WhatSock/w3c-alternative-text-computation
