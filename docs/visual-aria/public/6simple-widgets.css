@@ -8823,7 +8823,7 @@ content: ' (focusable) (has-menu) (vertical) [ARIA] Slider (Arrows should adjust
 
 /*
 ARIA Spinbutton
-Required attributes: aria-valuemin, aria-valuemax, aria-valuenow
+Required attributes: aria-valuenow
 Note: The Spinbutton role cannot include any embedded active elements.
 http://whatsock.com/training/matrices/#spinbutton
 */
@@ -8840,7 +8840,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8876,7 +8876,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8895,7 +8895,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8916,7 +8916,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-disabled="true"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8938,7 +8938,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-disabled="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8957,7 +8957,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8975,7 +8975,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (readonly) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-readonly="true"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -8997,7 +8997,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9016,7 +9016,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (readonly) [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9037,7 +9037,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (readonly) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-readonly="true"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-readonly="true"][aria-disabled="true"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9059,7 +9059,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) (readonly) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-readonly="true"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-readonly="true"][aria-disabled="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9078,7 +9078,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (readonly) [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9096,7 +9096,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9118,7 +9118,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9137,7 +9137,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (has-menu) [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9158,7 +9158,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-disabled="true"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9180,7 +9180,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-disabled="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9199,7 +9199,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (has-menu) [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9217,7 +9217,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (readonly) (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9239,7 +9239,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9258,7 +9258,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (readonly) (has-menu) [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9279,7 +9279,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (readonly) (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-disabled="true"][aria-valuenow]:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9301,7 +9301,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (disabled) (readonly) (has-menu) [ARIA] Spinbutton (missing required attributes) ';
 }
-*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-disabled="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-haspopup="true"][aria-readonly="true"][aria-disabled="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9320,7 +9320,7 @@ color: red;
 font-size: .9rem; font-weight: 900;
 content: ' (disabled) (readonly) (has-menu) [ARIA] Spinbutton (missing required attribute) ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-disabled="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9329,7 +9329,7 @@ color: orange;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (disabled) (readonly) (has-menu) [ARIA] Spinbutton ';
 }
-*[role="spinbutton"][aria-label][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-label][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9339,7 +9339,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9348,7 +9348,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-label=' attr(data-ws-bm-aria-label) ' ';
 }
-*[role="spinbutton"][aria-label][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-label][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9358,7 +9358,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9370,7 +9370,7 @@ content: ' (focusable) (readonly) [ARIA] Spinbutton (Up and Down should change) 
 *[role="spinbutton"][aria-label][aria-readonly="true"][aria-disabled="true"] {
 border: ridge thick green;
 }
-*[role="spinbutton"][aria-label][aria-haspopup="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-label][aria-haspopup="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9380,7 +9380,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9389,7 +9389,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-label=' attr(data-ws-bm-aria-label) ' ';
 }
-*[role="spinbutton"][aria-label][aria-haspopup="true"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-label][aria-haspopup="true"][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9399,7 +9399,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9408,7 +9408,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-label=' attr(data-ws-bm-aria-label) ' ';
 }
-*[role="spinbutton"][aria-labelledby][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-labelledby][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9418,7 +9418,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9427,7 +9427,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' ';
 }
-*[role="spinbutton"][aria-labelledby][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-labelledby][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9437,7 +9437,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9446,7 +9446,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' ';
 }
-*[role="spinbutton"][aria-labelledby][aria-haspopup="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-labelledby][aria-haspopup="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9456,7 +9456,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9465,7 +9465,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' ';
 }
-*[role="spinbutton"][aria-labelledby][aria-haspopup="true"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-labelledby][aria-haspopup="true"][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9475,7 +9475,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9484,7 +9484,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9494,7 +9494,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9503,7 +9503,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9513,7 +9513,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9525,7 +9525,7 @@ content: ' (focusable) (readonly) [ARIA] Spinbutton (Up and Down should change) 
 *[role="spinbutton"][aria-describedby][aria-readonly="true"][aria-disabled="true"] {
 border: ridge thick green;
 }
-*[role="spinbutton"][aria-describedby][aria-haspopup="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-haspopup="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9535,7 +9535,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9544,7 +9544,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-haspopup="true"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-haspopup="true"][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9554,7 +9554,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9563,7 +9563,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-label][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-label][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9573,7 +9573,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9582,7 +9582,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-label=' attr(data-ws-bm-aria-label) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-label][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-label][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9592,7 +9592,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9601,7 +9601,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-label=' attr(data-ws-bm-aria-label) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-label][aria-haspopup="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-label][aria-haspopup="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9611,7 +9611,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9620,7 +9620,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-label=' attr(data-ws-bm-aria-label) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-label][aria-haspopup="true"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-label][aria-haspopup="true"][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9630,7 +9630,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-label=' attr(aria-label) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-label][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9639,7 +9639,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-label=' attr(data-ws-bm-aria-label) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-labelledby][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-labelledby][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9649,7 +9649,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9658,7 +9658,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-labelledby][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-labelledby][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9668,7 +9668,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9677,7 +9677,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (readonly) [ARIA] Spinbutton (Up and Down should change) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9687,7 +9687,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9696,7 +9696,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focusable) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(data-ws-bm-aria-valuenow) ' aria-valuetext=' attr(data-ws-bm-aria-valuetext) ' aria-labelledby=' attr(data-ws-bm-aria-labelledby) ' aria-describedby=' attr(data-ws-bm-aria-describedby) ' ';
 }
-*[role="spinbutton"][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-readonly="true"][aria-valuemin][aria-valuemax][aria-valuenow]:focus:after {
+*[role="spinbutton"][aria-describedby][aria-labelledby][aria-haspopup="true"][aria-readonly="true"][aria-valuenow]:focus:after {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
@@ -9706,7 +9706,7 @@ color: green;
 font-size: .9rem; font-weight: 900;
 content: ' (focused) (readonly) (has-menu) [ARIA] Spinbutton (Up and Down should change, Shift+F10 should open menu) aria-valuenow=' attr(aria-valuenow) ' aria-valuetext=' attr(aria-valuetext) ' aria-labelledby=' attr(aria-labelledby) ' aria-describedby=' attr(aria-describedby) ' ';
 }
-*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuemin][data-ws-bm-aria-valuemax][data-ws-bm-aria-valuenow]:before {
+*[data-ws-bm-role="spinbutton"][data-ws-bm-aria-describedby][data-ws-bm-aria-labelledby][data-ws-bm-aria-haspopup="true"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-valuenow]:before {
 display: table;
 height: auto; width: auto;
 position: relative; padding: 1px 0;
