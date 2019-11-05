@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (CSS: 08/06/2018), JS last modified 02/26/2019
+Visual ARIA Bookmarklet (CSS: 11/04/2019), JS last modified 02/26/2019
 Copyright 2019 Bryan Garaventa
 https://github.com/accdc/visual-aria
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License

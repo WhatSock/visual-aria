@@ -1,7 +1,8 @@
 
 /*
 ARIA Combobox
-Required attributes: aria-expanded, aria-autocomplete, and aria-activedescendant if aria-autocomplete="list". Also, either aria-owns or aria-controls must be set when the Listbox is rendered, however the Combobox should not include both at the same time.
+Required attributes: aria-expanded, aria-autocomplete, and aria-activedescendant if aria-autocomplete="list". Also, aria-controls must be set when the Listbox is rendered.
+To conform with the greatest level of accessibility and ARIA 1.3 requirements, aria-owns must not be used on role="combobox".
 Note: The Combobox role cannot include any embedded active elements.
 http://whatsock.com/training/matrices/#combobox
 */
@@ -150,7 +151,7 @@ z-index: 10000;
 background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
-content: ' (focused) (expanded) [ARIA] Combobox (missing aria-owns or aria-controls to reference the role=listbox element) ';
+content: ' (focused) (expanded) [ARIA] Combobox (missing aria-controls to reference the role=listbox element) ';
 }
 *[role="combobox"][aria-expanded="true"][aria-owns][aria-autocomplete="list"][aria-activedescendant]:focus:before, *[role="combobox"][aria-expanded="true"][aria-controls][aria-autocomplete="list"][aria-activedescendant]:focus:before {
 display: table;
@@ -234,7 +235,7 @@ position: relative; padding: 1px 0;
 background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
-content: ' (focusable) (expanded) [ARIA] Combobox (missing aria-owns or aria-controls to reference the role=listbox element) ';
+content: ' (focusable) (expanded) [ARIA] Combobox (missing aria-controls to reference the role=listbox element) ';
 }
 *[data-ws-bm-role="combobox"][data-ws-bm-aria-expanded="true"][data-ws-bm-aria-owns][data-ws-bm-aria-autocomplete="list"][data-ws-bm-aria-activedescendant]:before, *[data-ws-bm-role="combobox"][data-ws-bm-aria-expanded="true"][data-ws-bm-aria-controls][data-ws-bm-aria-autocomplete="list"][data-ws-bm-aria-activedescendant]:before {
 display: table;
@@ -368,7 +369,7 @@ z-index: 10000;
 background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
-content: ' (focused) (expanded) (readonly) [ARIA] Combobox (missing aria-owns or aria-controls to reference the role=listbox element) ';
+content: ' (focused) (expanded) (readonly) [ARIA] Combobox (missing aria-controls to reference the role=listbox element) ';
 }
 *[role="combobox"][aria-readonly="true"][aria-expanded="true"][aria-owns][aria-autocomplete="list"][aria-activedescendant]:focus:before, *[role="combobox"][aria-readonly="true"][aria-expanded="true"][aria-controls][aria-autocomplete="list"][aria-activedescendant]:focus:before {
 display: table;
@@ -452,7 +453,7 @@ position: relative; padding: 1px 0;
 background-color: #FFFFE5;
 color: red;
 font-size: .9rem; font-weight: 900;
-content: ' (focusable) (expanded) (readonly) [ARIA] Combobox (missing aria-owns or aria-controls to reference the role=listbox element) ';
+content: ' (focusable) (expanded) (readonly) [ARIA] Combobox (missing aria-controls to reference the role=listbox element) ';
 }
 *[data-ws-bm-role="combobox"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-expanded="true"][data-ws-bm-aria-owns][data-ws-bm-aria-autocomplete="list"][data-ws-bm-aria-activedescendant]:before, *[data-ws-bm-role="combobox"][data-ws-bm-aria-readonly="true"][data-ws-bm-aria-expanded="true"][data-ws-bm-aria-controls][data-ws-bm-aria-autocomplete="list"][data-ws-bm-aria-activedescendant]:before {
 display: table;
