@@ -1,5 +1,5 @@
 /*!
-Visual ARIA Bookmarklet (CSS: 11/04/2019), JS last modified 02/26/2019
+Visual ARIA Bookmarklet (CSS: 11/04/2019), JS last modified 12/10/2019
 Copyright 2019 Bryan Garaventa
 https://github.com/accdc/visual-aria
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
@@ -1336,7 +1336,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
       while (start) {
         start = start.parentNode;
 
-        if (start.getAttribute("role") == role) return "true";
+        if (start.getAttribute("role") === role) return "true";
       }
 
       return "false";
@@ -1488,7 +1488,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
             a = ids.split(" ");
 
           for (var i = 0; i < a.length; i++) {
-            if (document.getElementById(a[i]) == node) isF = true;
+            if (document.getElementById(a[i]) === node) isF = true;
           }
 
           if (isF) node.setAttribute("data-ws-bm-self-ref", "true");
@@ -1502,7 +1502,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
           for (var i = 0; i < a.length; i++) {
             var o = document.getElementById(a[i]);
 
-            if (o && o.nodeType === 1 && o.getAttribute("role") != "term") {
+            if (o && o.nodeType === 1 && o.getAttribute("role") !== "term") {
               o.setAttribute("data-ws-bm-dtr-missing", "true");
               isT = false;
             }
@@ -1516,24 +1516,24 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
           obj["node-name"] = nodes[i].nodeName.toLowerCase();
           obj.tabindex = nodes[i].getAttribute("tabindex");
           obj["input-type"] =
-            obj["node-name"] == "input" ? nodes[i].getAttribute("type") : null;
+            obj["node-name"] === "input" ? nodes[i].getAttribute("type") : null;
 
-          if (obj.role == "radio")
+          if (obj.role === "radio")
             obj["role-nested"] = isNested(nodes[i], "radiogroup");
-          else if (obj.role == "tab")
+          else if (obj.role === "tab")
             obj["role-nested"] = isNested(nodes[i], "tablist");
-          else if (obj.role == "treeitem")
+          else if (obj.role === "treeitem")
             obj["role-nested"] = isNested(nodes[i], "tree");
 
           isSelfRef(nodes[i], obj.role, obj["aria-labelledby"]);
 
-          if (obj.role == "definition" && obj["aria-labelledby"])
+          if (obj.role === "definition" && obj["aria-labelledby"])
             isDefTerm(obj["aria-labelledby"]);
 
           if (
             " input img progress ".indexOf(" " + obj["node-name"] + " ") !== -1
           ) {
-            if (pNode != nodes[i].parentNode) {
+            if (pNode !== nodes[i].parentNode) {
               pNode = nodes[i].parentNode;
 
               for (var a in obj) {
@@ -1569,11 +1569,11 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
         if (
           (!focused.length ||
             !fO ||
-            focused[0] != activeObj ||
-            fO != activeDObj) &&
-          (activeDObj &&
-            activeDObj.nodeType === 1 &&
-            activeDObj.getAttribute("data-ws-bm-ad-match"))
+            focused[0] !== activeObj ||
+            fO !== activeDObj) &&
+          activeDObj &&
+          activeDObj.nodeType === 1 &&
+          activeDObj.getAttribute("data-ws-bm-ad-match")
         ) {
           activeDObj.removeAttribute("data-ws-bm-ad-match");
           activeDObj.removeAttribute("data-ws-bm-ad-invalid");
@@ -1587,8 +1587,8 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
             href = fO.getAttribute("href"),
             rl = fO.getAttribute("role");
 
-          if (!rl && nn == "a" && href) rl = "link";
-          else if (!rl && nn == "button") rl = "button";
+          if (!rl && nn === "a" && href) rl = "link";
+          else if (!rl && nn === "button") rl = "button";
           fO.setAttribute("data-ws-bm-ad-match", rl);
 
           if (!rl) fO.setAttribute("data-ws-bm-ad-invalid", "true");
@@ -1629,7 +1629,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
             oR = pO.getAttribute("role"),
             oN = pO.nodeName.toUpperCase(),
             aN =
-              oR == "none" ? "data-ws-role-none" : "data-ws-role-presentation";
+              oR === "none" ? "data-ws-role-none" : "data-ws-role-presentation";
 
           if (
             " input textarea img progress ".indexOf(
@@ -1647,7 +1647,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
     var checkNames = function() {
       if (window.getAccName && typeof window.getAccName === "function") {
         var accNames = document.querySelectorAll(
-          'textarea, input, select, button, a[href], progress, *[role="button"], *[role="checkbox"], *[role="link"], *[role="searchbox"], *[role="scrollbar"], *[role="slider"], *[role="spinbutton"], *[role="switch"], *[role="textbox"], *[role="combobox"], *[role="option"], *[role="menuitem"], *[role="menuitemcheckbox"], *[role="menuitemradio"], *[role="radio"], *[role="tab"], *[role="treeitem"], h1, h2, h3, h4, h5, h6, *[role="heading"], ul[aria-labelledby], ol[aria-labelledby], *[role="list"][aria-labelledby], *[role="directory"][aria-labelledby], ul[aria-label], ol[aria-label], *[role="list"][aria-label], *[role="directory"][aria-label], table[aria-labelledby], *[role="table"][aria-labelledby], *[role="grid"][aria-labelledby], *[role="treegrid"][aria-labelledby], table[aria-label], *[role="table"][aria-label], *[role="grid"][aria-label], *[role="treegrid"][aria-label], *[role="row"][aria-labelledby], *[role="row"][aria-label], *[role="cell"], *[role="gridcell"], th, *[role="columnheader"], *[role="rowheader"], *[role="alertdialog"][aria-labelledby], dialog[aria-labelledby], *[role="dialog"][aria-labelledby], *[role="alertdialog"][aria-label], dialog[aria-label], *[role="dialog"][aria-label], header[aria-labelledby], *[role="banner"][aria-labelledby], aside[aria-labelledby], *[role="complementary"][aria-labelledby], footer[aria-labelledby], *[role="contentinfo"][aria-labelledby], header[aria-label], *[role="banner"][aria-label], aside[aria-label], *[role="complementary"][aria-label], footer[aria-label], *[role="contentinfo"][aria-label], form[aria-labelledby], *[role="form"][aria-labelledby], form[aria-label], *[role="form"][aria-label], main[aria-labelledby], *[role="main"][aria-labelledby], nav[aria-labelledby], *[role="navigation"][aria-labelledby], main[aria-label], *[role="main"][aria-label], nav[aria-label], *[role="navigation"][aria-label], section[aria-labelledby], section[aria-label], *[role="region"][aria-labelledby], *[role="search"][aria-labelledby], *[role="article"][aria-labelledby], *[role="definition"][aria-labelledby], *[role="document"][aria-labelledby], *[role="feed"][aria-labelledby], *[role="figure"][aria-labelledby], *[role="img"][aria-labelledby], *[role="math"][aria-labelledby], *[role="note"][aria-labelledby], *[role="application"][aria-labelledby], *[role="region"][aria-label], *[role="search"][aria-label], *[role="article"][aria-label], *[role="definition"][aria-label], *[role="document"][aria-label], *[role="feed"][aria-label], *[role="figure"][aria-label], *[role="img"][aria-label], *[role="math"][aria-label], *[role="note"][aria-label], *[role="application"][aria-label], *[role="log"][aria-labelledby], *[role="marquee"][aria-labelledby], *[role="status"][aria-labelledby], *[role="timer"][aria-labelledby], *[role="log"][aria-label], *[role="marquee"][aria-label], *[role="status"][aria-label], *[role="timer"][aria-label], *[role="toolbar"][aria-labelledby], *[role="group"][aria-labelledby], *[role="listbox"][aria-labelledby], *[role="menu"][aria-labelledby], *[role="menubar"][aria-labelledby], *[role="toolbar"][aria-label], *[role="group"][aria-label], *[role="listbox"][aria-label], *[role="menu"][aria-label], *[role="menubar"][aria-label], *[role="radiogroup"][aria-labelledby], *[role="tree"][aria-labelledby], *[role="tablist"][aria-labelledby], *[role="tabpanel"][aria-labelledby], *[role="radiogroup"][aria-label], *[role="tree"][aria-label], *[role="tablist"][aria-label], *[role="tabpanel"][aria-label]'
+          "a[href], area[href], article, aside, button, dialog, datalist, details, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hr, iframe, img, input, ul, ol, li, main, math, menu, nav, output, progress, section, select, summary, table, th, textarea, *[role]"
         );
 
         for (var aN = 0; aN < accNames.length; aN++) {
@@ -1655,7 +1655,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
             accNames[aN],
             function(props, node) {
               if (
-                " input textarea img progress ".indexOf(
+                " datalist iframe img input progress select textarea ".indexOf(
                   " " + node.nodeName.toLowerCase() + " "
                 ) !== -1
               ) {
@@ -1746,39 +1746,41 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
       if (ev.shiftKey && ev.ctrlKey) {
         var targ = null;
 
-        if (!ev) ev = window.event;
-
         if (ev.target) targ = ev.target;
         else if (ev.srcElement) targ = ev.srcElement;
 
-        if (targ.nodeType == 3) targ = targ.parentNode;
+        if (targ.nodeType === 3) targ = targ.parentNode;
         var getClosestRole = function(o) {
           while (o) {
             var r = o.getAttribute("role");
 
             if (
               r &&
-              " rowgroup row columnheader rowheader menuitem menuitemcheckbox menuitemradio group ".indexOf(
-                " " + r + " "
-              ) === -1
+              " rowgroup row columnheader rowheader ".indexOf(" " + r + " ") ===
+                -1
             ) {
-              if (r == "option") r = "listbox";
-              else if (r == "radio") r = "radiogroup";
-              else if (r == "tab" || r == "tabpanel") r = "tablist";
-              else if (r == "treeitem") r = "tree";
+              if (r === "cell") r = "table";
+              else if (r === "gridcell") r = "grid";
+              else if (
+                r === "menuitem" ||
+                r === "menuitemcheckbox" ||
+                r === "menuitemradio"
+              )
+                r = "menu";
+              else if (r === "option") r = "listbox";
+              else if (r === "radio") r = "radiogroup";
+              else if (r === "tab" || r === "tabpanel") r = "tablist";
+              else if (r === "treeitem") r = "tree";
               return r;
             }
             o = o.parentNode;
           }
-          return null;
+          return "";
         };
-        var role = getClosestRole(targ),
-          rmo = window.VisualARIAMatrices;
-
-        if (role && rmo.nodeType === 1)
-          rmo.href = "http://whatsock.com/training/matrices/#" + role;
-
-        if (rmo.nodeType === 1) rmo.click();
+        var role = getClosestRole(targ);
+        window.VisualARIA.VisualARIAMatrices.href =
+          "http://whatsock.com/training/matrices/#" + role;
+        window.VisualARIA.VisualARIAMatrices.click();
       }
     });
 
@@ -1798,7 +1800,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
   if (!document.getElementById("ws-bm-aria-matrices-lnk")) {
     var m = document.createElement("span");
     m.innerHTML =
-      '<span id="ws-bm-aria-matrices-lnk" style="text-align: center; position: fixed; top: 0; right: 0;padding: 3px; border: 1px solid #dedede; background: #f5f5f5; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#f9f9f9\', endColorstr=\'#f0f0f0\'); background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f0f0f0)); background: -moz-linear-gradient(top,  #f9f9f9, #f0f0f0); border-color: #000; -webkit-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; -moz-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;" onmouseenter="window.VisualARIA.VisualARIAMatrices.innerHTML=\'ARIA Role Matrices\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().lng;" onmouseleave="window.VisualARIA.VisualARIAMatrices.innerHTML=\'?\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().shrt;"><a id="ws-bm-aria-matrices-lnk-a" style="display: inline-block; text-decoration: none; font-size: 10pt; padding: 6px 9px; border: 1px solid #dedede; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #525252; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#5e5e5e\', endColorstr=\'#434343\'); background: -webkit-gradient(linear, left top, left bottom, from(#5e5e5e), to(#434343)); background: -moz-linear-gradient(top,  #5e5e5e, #434343); border-color: #4c4c4c #313131 #1f1f1f; color: #fff; text-shadow: 0 1px 0 #2e2e2e; -webkit-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; -moz-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686;" target="ws_aria_role_matrices" onmouseover="this.href=\'http://whatsock.com/training/matrices/\';" onclick="this.href=\'http://whatsock.com/training/matrices/\';" onfocus="window.VisualARIA.VisualARIAMatrices.innerHTML=\'ARIA Role Matrices\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().lng;" onblur="window.VisualARIA.VisualARIAMatrices.innerHTML=\'?\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().shrt;" href="http://whatsock.com/training/matrices/" aria-label="ARIA Role Matrices">?</a><br /><a id="ws-bm-aria-matrices-toggle-a" style="display: inline-block; text-decoration: none; font-size: 10pt; padding: 6px 9px; border: 1px solid #dedede; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #525252; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#5e5e5e\', endColorstr=\'#434343\'); background: -webkit-gradient(linear, left top, left bottom, from(#5e5e5e), to(#434343)); background: -moz-linear-gradient(top,  #5e5e5e, #434343); border-color: #4c4c4c #313131 #1f1f1f; color: #fff; text-shadow: 0 1px 0 #2e2e2e; -webkit-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; -moz-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686;" onclick="window.VisualARIA.toggleVisualARIA(); return false;" onfocus="window.VisualARIA.VisualARIAMatrices.innerHTML=\'ARIA Role Matrices\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().lng;" onblur="window.VisualARIA.VisualARIAMatrices.innerHTML=\'?\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().shrt;" href="#" aria-label="Unload Visual ARIA">X</a> </span>';
+      '<span id="ws-bm-aria-matrices-lnk" style="text-align: center; position: fixed; top: 0; right: 0;padding: 3px; border: 1px solid #dedede; background: #f5f5f5; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#f9f9f9\', endColorstr=\'#f0f0f0\'); background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f0f0f0)); background: -moz-linear-gradient(top,  #f9f9f9, #f0f0f0); border-color: #000; -webkit-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; -moz-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb; box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;" onmouseenter="window.VisualARIA.VisualARIAMatrices.innerHTML=\'ARIA Role Matrices\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().lng;" onmouseleave="window.VisualARIA.VisualARIAMatrices.innerHTML=\'?\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().shrt;"><a id="ws-bm-aria-matrices-lnk-a" style="display: inline-block; text-decoration: none; font-size: 10pt; padding: 6px 9px; border: 1px solid #dedede; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #525252; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#5e5e5e\', endColorstr=\'#434343\'); background: -webkit-gradient(linear, left top, left bottom, from(#5e5e5e), to(#434343)); background: -moz-linear-gradient(top,  #5e5e5e, #434343); border-color: #4c4c4c #313131 #1f1f1f; color: #fff; text-shadow: 0 1px 0 #2e2e2e; -webkit-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; -moz-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686;" target="ws_aria_role_matrices" onmouseover="this.href=\'http://whatsock.com/training/matrices/\';" onfocus="window.VisualARIA.VisualARIAMatrices.innerHTML=\'ARIA Role Matrices\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().lng;" onblur="window.VisualARIA.VisualARIAMatrices.innerHTML=\'?\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().shrt;" href="http://whatsock.com/training/matrices/" aria-label="ARIA Role Matrices">?</a><br /><a id="ws-bm-aria-matrices-toggle-a" style="display: inline-block; text-decoration: none; font-size: 10pt; padding: 6px 9px; border: 1px solid #dedede; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #525252; filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#5e5e5e\', endColorstr=\'#434343\'); background: -webkit-gradient(linear, left top, left bottom, from(#5e5e5e), to(#434343)); background: -moz-linear-gradient(top,  #5e5e5e, #434343); border-color: #4c4c4c #313131 #1f1f1f; color: #fff; text-shadow: 0 1px 0 #2e2e2e; -webkit-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; -moz-box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686; box-shadow: 0 1px 1px #afafaf, inset 0 1px 0 #868686;" onclick="window.VisualARIA.toggleVisualARIA(); return false;" onfocus="window.VisualARIA.VisualARIAMatrices.innerHTML=\'ARIA Role Matrices\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().lng;" onblur="window.VisualARIA.VisualARIAMatrices.innerHTML=\'?\'; window.VisualARIA.VisualARIAToggle.innerHTML=window.VisualARIA.getVisualARIAStatus().shrt;" href="#" aria-label="Unload Visual ARIA">X</a> </span>';
     document.body.appendChild(m);
     window.VisualARIA.VisualARIAMatrices = document.getElementById(
       "ws-bm-aria-matrices-lnk-a"
