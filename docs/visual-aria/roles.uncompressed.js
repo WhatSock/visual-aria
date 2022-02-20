@@ -1,7 +1,7 @@
 /*!
 Visual ARIA Bookmarklet (CSS: 11/04/2019), JS last modified 12/10/2019
 Copyright 2019 Bryan Garaventa
-https://github.com/accdc/visual-aria
+https://github.com/whatsock/visual-aria
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
 
@@ -13,7 +13,7 @@ Part of the ARIA Role Conformance Matrices, distributed under the terms of the O
   // When useOffline=true, the roles.css file must be manually added to provide visual feedback within the same document where roles.js is being processed.
   var useOffline = false,
     // Base path for dynamic loading of individual CSS files.
-    basePath = "https://accdc.github.io/visual-aria/visual-aria/public/",
+    basePath = "https://whatsock.github.io/visual-aria/visual-aria/public/",
     // Set millisecond interval for dynamically loading supporting CSS files and performing the naming calculation for widget roles
     msInterval = 2000,
     // Load the most recent AccName Prototype code from

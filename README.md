@@ -59,7 +59,7 @@ Instructions
 http://whatsock.com/training/matrices/visual-aria.htm
 
 An alternate public bookmarklet script is also available within this archive, which provides direct GitHub repository referencing which will always reflect the most recent Visual ARIA updates.
-https://accdc.github.io/visual-aria/github-bookmarklet/visual-aria.htm
+https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm
 
 3. Observe the new information displayed that conveys where ARIA is being used.
 
@@ -86,4 +86,4 @@ Related projects:
 -----
 
 * WhatSock Organization: https://github.com/whatsock
-* Visual ARIA: https://github.com/accdc/visual-aria
+* Visual ARIA: https://github.com/whatsock/visual-aria
