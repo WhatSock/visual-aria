@@ -34,7 +34,7 @@ Visual ARIA browser extension support or bug reports should be sent to extension
 Project home:
 -----
 
-http://whatsock.com/training/matrices/visual-aria.htm
+https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm
 
 Download File and Folder Descriptions
 -----
@@ -56,10 +56,8 @@ Instructions
 1. Open the files within the Files folder in sequence using the numbered HTM files.
 
 2. Load Visual ARIA using either the local copy or the public bookmarklet.
-http://whatsock.com/training/matrices/visual-aria.htm
-
-An alternate public bookmarklet script is also available within this archive, which provides direct GitHub repository referencing which will always reflect the most recent Visual ARIA updates.
 https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm
+* Or add to Chrome: https://chrome.google.com/webstore/detail/visual-aria/lhbmajchkkmakajkjenkchhnhbadmhmk?hl=en-GB
 
 3. Observe the new information displayed that conveys where ARIA is being used.
 
@@ -75,12 +73,12 @@ When observing interactive widget roles, the colors for Visual ARIA will change 
 
 Moreover, when interactive widget roles are used and focus is set to one such element, Visual ARIA will suggest keyboard interactions that match the design paradigm for that widget type. In the case of role="button" for example, Visual ARIA will suggest that Space and Enter should activate, and in the case of single tab stop widget roles such as role="radio", role="tab", role="menuitem", role="option", and so on, Visual ARIA will then suggest that the arrow keys should be used to move focus.
 
-This is meant to guide education and development regarding the accompanying scripting behaviors that should be used when building interactive widgets, thus matching all of the ARIA 1.1 role usage algorithms documented at http://whatsock.com/training/matrices/ .
+This is meant to guide education and development regarding the accompanying scripting behaviors that should be used when building interactive widgets, thus matching all of the ARIA 1.1 role usage algorithms documented at https://whatsock.com/training/matrices/ .
 
 The files within this archive may be modified and changed to try out different ARIA roles, which is an encapsulated testing environment for experimenting with ARIA role usage.
 
 Additional instructions and color combination details are available at
-http://whatsock.com/training/matrices/visual-aria.htm#instructions-for-use
+https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm#instructions-for-use
 
 Related projects:
 -----
