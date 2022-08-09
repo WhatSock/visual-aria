@@ -1134,9 +1134,9 @@ License: MIT (https://opensource.org/licenses/MIT)
       /**
     `finally` will be invoked regardless of the promise's fate just as native
     try/catch/finally behaves
-  
+
     Synchronous example:
-  
+
     ```js
     findAuthor() {
       if (Math.random() > 0.5) {
@@ -1144,7 +1144,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       }
       return new Author();
     }
-  
+
     try {
       return findAuthor(); // succeed or fail
     } catch(error) {
@@ -1154,9 +1154,9 @@ License: MIT (https://opensource.org/licenses/MIT)
       // doesn't affect the return value
     }
     ```
-  
+
     Asynchronous example:
-  
+
     ```js
     findAuthor().catch(function(reason){
       return findOtherAuther();
@@ -1164,7 +1164,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       // author was either found, or not
     });
     ```
-  
+
     @method finally
     @param {Function} callback
     @return {Promise}
@@ -1467,6 +1467,28 @@ License: MIT (https://opensource.org/licenses/MIT)
             nodes[i].nodeName.toUpperCase()
           );
         }
+
+          /*Added by Laurence Lewis 9 August 2022 - Adding script to identify ARIA 1.2 Prohibited Names */
+
+          nodes = document.querySelectorAll(
+    "div:not([role])[aria-label],div:not([role])[aria-labelledby],span:not([role])[aria-labelledby],span:not([role])[aria-label],[role=caption][aria-labelledby],[role=code][aria-labelledby],[role=deletion][aria-labelledby],[role=emphasis][aria-labelledby],[role=generic][aria-labelledby],[role=insertion][aria-labelledby],[role=paragraph][aria-labelledby],[role=presentation][aria-labelledby],[role=strong][aria-labelledby],[role=subscript][aria-labelledby],[role=superscript][aria-labelledby],[role=caption][aria-label],[role=code][aria-label],[role=deletion][aria-label],[role=\"emphasis\"][aria-label],[role=\"generic\"][aria-label],[role=\"insertion\"][aria-label],[role=\"paragraph\"][aria-label],[role=presentation][aria-label], [role=none][aria-label],[role=strong][aria-label],[role=subscript][aria-label],[role=superscript][aria-label]"
+    );
+
+    for (var n = 0; n < nodes.length; n++) {
+        var currentNode = nodes[n];
+        var role = currentNode.getAttribute('role');
+        currentNode.setAttribute("data-ws-name-prohibited-aria", role);
+    }
+
+    nodes = document.querySelectorAll(
+        "caption[aria-labelledby],figcaption[aria-labelledby],code[aria-labelledby],del[aria-labelledby],em[aria-labelledby],ins[aria-labelledby],p[aria-labelledby],strong[aria-labelledby],sub[aria-labelledby],sup[aria-labelledby],caption[aria-label],figcaption[aria-label],code[aria-label],del[aria-label],em[aria-label],ins[aria-label],p[aria-label],strong[aria-label],sub[aria-label],sup[aria-label]"
+    );
+
+    for (var n = 0; n < nodes.length; n++) {
+        nodes[n].setAttribute("data-ws-name-prohibited-html", nodes[n].nodeName);
+    }
+
+          /* End */
 
         nodes = document.querySelectorAll("input, *[role], img, progress");
 
