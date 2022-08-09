@@ -1474,9 +1474,9 @@ License: MIT (https://opensource.org/licenses/MIT)
     "div:not([role])[aria-label],div:not([role])[aria-labelledby],span:not([role])[aria-labelledby],span:not([role])[aria-label],[role=caption][aria-labelledby],[role=code][aria-labelledby],[role=deletion][aria-labelledby],[role=emphasis][aria-labelledby],[role=generic][aria-labelledby],[role=insertion][aria-labelledby],[role=paragraph][aria-labelledby],[role=presentation][aria-labelledby],[role=strong][aria-labelledby],[role=subscript][aria-labelledby],[role=superscript][aria-labelledby],[role=caption][aria-label],[role=code][aria-label],[role=deletion][aria-label],[role=\"emphasis\"][aria-label],[role=\"generic\"][aria-label],[role=\"insertion\"][aria-label],[role=\"paragraph\"][aria-label],[role=presentation][aria-label], [role=none][aria-label],[role=strong][aria-label],[role=subscript][aria-label],[role=superscript][aria-label]"
     );
 
-    for (let n = 0; n < nodes.length; n++) {
-        const currentNode = nodes[n];
-        const role = currentNode.getAttribute('role');
+    for (var n = 0; n < nodes.length; n++) {
+        var currentNode = nodes[n];
+        var role = currentNode.getAttribute('role');
         currentNode.setAttribute("data-ws-name-prohibited-aria", role);
     }
 
@@ -1484,7 +1484,7 @@ License: MIT (https://opensource.org/licenses/MIT)
         "caption[aria-labelledby],figcaption[aria-labelledby],code[aria-labelledby],del[aria-labelledby],em[aria-labelledby],ins[aria-labelledby],p[aria-labelledby],strong[aria-labelledby],sub[aria-labelledby],sup[aria-labelledby],caption[aria-label],figcaption[aria-label],code[aria-label],del[aria-label],em[aria-label],ins[aria-label],p[aria-label],strong[aria-label],sub[aria-label],sup[aria-label]"
     );
 
-    for (let n = 0; n < nodes.length; n++) {
+    for (var n = 0; n < nodes.length; n++) {
         nodes[n].setAttribute("data-ws-name-prohibited-html", nodes[n].nodeName);
     }
 
