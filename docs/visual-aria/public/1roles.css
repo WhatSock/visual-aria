@@ -1,8 +1,84 @@
 /*
-Visual ARIA Bookmarklet (Revision: 11/04/2019)
-Copyright 2019 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
+Visual ARIA Bookmarklet (Revision: 9/9/2022)
+Copyright 2022 Bryan Garaventa (http://whatsock.com/training/matrices/visual-aria.htm)
 Part of the ARIA Role Conformance Matrices, distributed under the terms of the Open Source Initiative OSI - MIT License
 */
+
+/* Laurence Lewis -Name Prohibited */
+
+div:not([role])[aria-label][data-ws-name-prohibited-aria],
+span:not([role])[aria-label][data-ws-name-prohibited-aria],
+*[aria-label][data-ws-name-prohibited-aria]
+{
+  border: 2px solid red;
+}
+*[aria-label][data-ws-name-prohibited-aria]::before {
+    display: table;
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: 1px 0;
+    background-color: #FFFFE5;
+    color: red;
+    font-size: .9rem;
+    font-weight: 900;
+    content: " [Invalid] aria-label cannot be used on " attr(data-ws-name-prohibited-aria) " ";
+}
+div:not([role])[aria-labelledby][data-ws-name-prohibited-aria],
+span:not([role])[aria-labelledby][data-ws-name-prohibited-aria],
+*[aria-labelledby][data-ws-name-prohibited-aria]
+{
+  border: 2px solid red;
+}
+*[aria-labelledby][data-ws-name-prohibited-aria]::before {
+    display: table;
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: 1px 0;
+    background-color: #FFFFE5;
+    color: red;
+    font-size: .9rem;
+    font-weight: 900;
+    content: " [Invalid] aria-labelledby cannot be used on " attr(data-ws-name-prohibited-aria) " ";
+}
+div:not([role])[aria-label][data-ws-name-prohibited-html],
+span:not([role])[aria-label][data-ws-name-prohibited-html],
+*[aria-label][data-ws-name-prohibited-html]
+{
+  border: 2px solid red;
+}
+*[aria-label][data-ws-name-prohibited-html]::before {
+    display: table;
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: 1px 0;
+    background-color: #FFFFE5;
+    color: red;
+    font-size: .9rem;
+    font-weight: 900;
+    content: " [Invalid] aria-label cannot be used on HTML element " attr(data-ws-name-prohibited-html) " ";
+}
+div:not([role])[aria-labelledby][data-ws-name-prohibited-html],
+span:not([role])[aria-labelledby][data-ws-name-prohibited-html],
+*[aria-labelledby][data-ws-name-prohibited-html]
+{
+  border: 2px solid red;
+}
+*[aria-labelledby][data-ws-name-prohibited-html]::before {
+    display: table;
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: 1px 0;
+    background-color: #FFFFE5;
+    color: red;
+    font-size: .9rem;
+    font-weight: 900;
+    content: " [Invalid] aria-labelledby cannot be used on HTML element " attr(data-ws-name-prohibited-html) " ";
+}
+/* END */
 
 *[aria-label]:focus:after {
 display: table;
