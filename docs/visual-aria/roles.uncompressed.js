@@ -1481,7 +1481,7 @@ License: MIT (https://opensource.org/licenses/MIT)
     }
 
     nodes = document.querySelectorAll(
-        "caption[aria-labelledby],figcaption[aria-labelledby],code[aria-labelledby],del[aria-labelledby],em[aria-labelledby],ins[aria-labelledby],p[aria-labelledby],strong[aria-labelledby],sub[aria-labelledby],sup[aria-labelledby],caption[aria-label],figcaption[aria-label],code[aria-label],del[aria-label],em[aria-label],ins[aria-label],p[aria-label],strong[aria-label],sub[aria-label],sup[aria-label]"
+        "div:not([role])[aria-label],div:not([role])[aria-labelledby],span:not([role])[aria-labelledby],span:not([role])[aria-label],[role=caption][aria-labelledby],[role=code][aria-labelledby],caption[aria-labelledby],figcaption[aria-labelledby],code[aria-labelledby],del[aria-labelledby],em[aria-labelledby],ins[aria-labelledby],p[aria-labelledby],strong[aria-labelledby],sub[aria-labelledby],sup[aria-labelledby],caption[aria-label],figcaption[aria-label],code[aria-label],del[aria-label],em[aria-label],ins[aria-label],p[aria-label],strong[aria-label],sub[aria-label],sup[aria-label]"
     );
 
     for (var n = 0; n < nodes.length; n++) {
