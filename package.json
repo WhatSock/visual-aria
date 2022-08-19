@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "uglifyjs \"./docs/visual-aria/roles.uncompressed.js\" --comments /^!/ --compress --mangle --output \"./docs/visual-aria/roles.js\"",
-    "fix": "prettier --write \"./docs/visual-aria/roles.uncompressed.js\" \"./**/{setup.js,radios.js}\"",
+    "fix": "prettier --write \"./docs/visual-aria/roles.uncompressed.js\" \"./**/{setup.js,radios.js}\" && js-beautify -r --type=\"html\" \"./**/*.{htm,html}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/whatsock/visual-aria#readme",
   "devDependencies": {
+    "js-beautify": "^1.14.5",
     "prettier": "^2.7.1",
     "uglify-js": "^3.17.0"
   }
