@@ -7,7 +7,7 @@ License: MIT (https://opensource.org/licenses/MIT)
 
 // Visual ARIA
 
-(function() {
+(function () {
   // Set useOffline=true to disable the dynamic loader,
   // or reference an https:// path to ensure that both secure and non-secure sites can be accessed by Visual ARIA when useOffline=false.
   // When useOffline=true, the roles.css file must be manually added to provide visual feedback within the same document where roles.js is being processed.
@@ -29,13 +29,13 @@ License: MIT (https://opensource.org/licenses/MIT)
    * @version   v4.2.4+314e4831
    */
 
-  (function(global, factory) {
+  (function (global, factory) {
     typeof exports === "object" && typeof module !== "undefined"
       ? (module.exports = factory())
       : typeof define === "function" && define.amd
       ? define(factory)
       : (global.ES6Promise = factory());
-  })(this, function() {
+  })(this, function () {
     "use strict";
 
     function objectOrFunction(x) {
@@ -51,7 +51,7 @@ License: MIT (https://opensource.org/licenses/MIT)
     if (Array.isArray) {
       _isArray = Array.isArray;
     } else {
-      _isArray = function(x) {
+      _isArray = function (x) {
         return Object.prototype.toString.call(x) === "[object Array]";
       };
     }
@@ -105,7 +105,7 @@ License: MIT (https://opensource.org/licenses/MIT)
     function useNextTick() {
       // node version 0.10.x displays a deprecation warning when nextTick is used recursively
       // see https://github.com/cujojs/when/issues/410 for details
-      return function() {
+      return function () {
         return process.nextTick(flush);
       };
     }
@@ -113,7 +113,7 @@ License: MIT (https://opensource.org/licenses/MIT)
     // vertx
     function useVertxTimer() {
       if (typeof vertxNext !== "undefined") {
-        return function() {
+        return function () {
           vertxNext(flush);
         };
       }
@@ -127,7 +127,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       var node = document.createTextNode("");
       observer.observe(node, { characterData: true });
 
-      return function() {
+      return function () {
         node.data = iterations = ++iterations % 2;
       };
     }
@@ -136,7 +136,7 @@ License: MIT (https://opensource.org/licenses/MIT)
     function useMessageChannel() {
       var channel = new MessageChannel();
       channel.port1.onmessage = flush;
-      return function() {
+      return function () {
         return channel.port2.postMessage(0);
       };
     }
@@ -145,7 +145,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       // Store setTimeout reference so es6-promise will be unaffected by
       // other code modifying setTimeout (like sinon.useFakeTimers())
       var globalSetTimeout = setTimeout;
-      return function() {
+      return function () {
         return globalSetTimeout(flush, 1);
       };
     }
@@ -202,7 +202,7 @@ License: MIT (https://opensource.org/licenses/MIT)
 
       if (_state) {
         var callback = arguments[_state - 1];
-        asap(function() {
+        asap(function () {
           return invokeCallback(_state, child, callback, parent._result);
         });
       } else {
@@ -260,9 +260,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       return promise;
     }
 
-    var PROMISE_ID = Math.random()
-      .toString(36)
-      .substring(2);
+    var PROMISE_ID = Math.random().toString(36).substring(2);
 
     function noop() {}
 
@@ -300,12 +298,12 @@ License: MIT (https://opensource.org/licenses/MIT)
     }
 
     function handleForeignThenable(promise, thenable, then$$1) {
-      asap(function(promise) {
+      asap(function (promise) {
         var sealed = false;
         var error = tryThen(
           then$$1,
           thenable,
-          function(value) {
+          function (value) {
             if (sealed) {
               return;
             }
@@ -316,7 +314,7 @@ License: MIT (https://opensource.org/licenses/MIT)
               fulfill(promise, value);
             }
           },
-          function(reason) {
+          function (reason) {
             if (sealed) {
               return;
             }
@@ -343,10 +341,10 @@ License: MIT (https://opensource.org/licenses/MIT)
         subscribe(
           thenable,
           undefined,
-          function(value) {
+          function (value) {
             return resolve(promise, value);
           },
-          function(reason) {
+          function (reason) {
             return reject(promise, reason);
           }
         );
@@ -536,7 +534,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       return new Error("Array Methods must be provided an Array");
     }
 
-    var Enumerator = (function() {
+    var Enumerator = (function () {
       function Enumerator(Constructor, input) {
         this._instanceConstructor = Constructor;
         this.promise = new Constructor(noop);
@@ -589,7 +587,7 @@ License: MIT (https://opensource.org/licenses/MIT)
             this._willSettleAt(promise, i);
           } else {
             this._willSettleAt(
-              new c(function(resolve$$1) {
+              new c(function (resolve$$1) {
                 return resolve$$1(entry);
               }),
               i
@@ -624,10 +622,10 @@ License: MIT (https://opensource.org/licenses/MIT)
         subscribe(
           promise,
           undefined,
-          function(value) {
+          function (value) {
             return enumerator._settledAt(FULFILLED, i, value);
           },
-          function(reason) {
+          function (reason) {
             return enumerator._settledAt(REJECTED, i, reason);
           }
         );
@@ -757,11 +755,11 @@ License: MIT (https://opensource.org/licenses/MIT)
       var Constructor = this;
 
       if (!isArray(entries)) {
-        return new Constructor(function(_, reject) {
+        return new Constructor(function (_, reject) {
           return reject(new TypeError("You must pass an array to race."));
         });
       } else {
-        return new Constructor(function(resolve, reject) {
+        return new Constructor(function (resolve, reject) {
           var length = entries.length;
           for (var i = 0; i < length; i++) {
             Constructor.resolve(entries[i]).then(resolve, reject);
@@ -928,7 +926,7 @@ License: MIT (https://opensource.org/licenses/MIT)
   @constructor
 */
 
-    var Promise$2 = (function() {
+    var Promise$2 = (function () {
       function Promise(resolver) {
         this[PROMISE_ID] = nextId();
         this._result = this._state = undefined;
@@ -1175,13 +1173,13 @@ License: MIT (https://opensource.org/licenses/MIT)
         var constructor = promise.constructor;
 
         return promise.then(
-          function(value) {
-            return constructor.resolve(callback()).then(function() {
+          function (value) {
+            return constructor.resolve(callback()).then(function () {
               return value;
             });
           },
-          function(reason) {
-            return constructor.resolve(callback()).then(function() {
+          function (reason) {
+            return constructor.resolve(callback()).then(function () {
               throw reason;
             });
           }
@@ -1264,7 +1262,7 @@ License: MIT (https://opensource.org/licenses/MIT)
 
   window.top.VisualARIA.IsVisualARIALoaded = true;
 
-  window.VisualARIA.toggleVisualARIA = function() {
+  window.VisualARIA.toggleVisualARIA = function () {
     if (window.VisualARIA.VisualARIALoadingMsg) {
       window.VisualARIA.VisualARIALoadingMsg.parentNode.removeChild(
         window.VisualARIA.VisualARIALoadingMsg
@@ -1281,19 +1279,20 @@ License: MIT (https://opensource.org/licenses/MIT)
         ? "Unload Visual ARIA"
         : "Load Visual ARIA"
     );
-    window.VisualARIA.VisualARIAToggle.innerHTML = window.VisualARIA.getVisualARIAStatus().lng;
+    window.VisualARIA.VisualARIAToggle.innerHTML =
+      window.VisualARIA.getVisualARIAStatus().lng;
   };
 
-  window.VisualARIA.getVisualARIAStatus = function() {
+  window.VisualARIA.getVisualARIAStatus = function () {
     return {
       lng: window.top.VisualARIA.IsVisualARIALoaded
         ? "Unload Visual ARIA"
         : "Load Visual ARIA",
-      shrt: window.top.VisualARIA.IsVisualARIALoaded ? "X" : "O"
+      shrt: window.top.VisualARIA.IsVisualARIALoaded ? "X" : "O",
     };
   };
 
-  var WSBMInit = function(
+  var WSBMInit = function (
     isTop,
     useOffline,
     basePath,
@@ -1306,11 +1305,11 @@ License: MIT (https://opensource.org/licenses/MIT)
   ) {
     var loader = this;
 
-    var bind = function(obj, type, fn) {
+    var bind = function (obj, type, fn) {
         if (obj.attachEvent) {
           obj["e" + type + fn] = fn;
 
-          obj[type + fn] = function() {
+          obj[type + fn] = function () {
             obj["e" + type + fn](window.event);
           };
 
@@ -1321,7 +1320,7 @@ License: MIT (https://opensource.org/licenses/MIT)
 
         return obj;
       },
-      trim = function(str) {
+      trim = function (str) {
         if (typeof str !== "string") return "";
 
         return str.replace(/^\s+|\s+$/g, "");
@@ -1329,10 +1328,11 @@ License: MIT (https://opensource.org/licenses/MIT)
       activeObj = null,
       activeDObj = null;
 
-    attrs = "aria-disabled,aria-readonly,aria-haspopup,aria-orientation,aria-label,aria-labelledby,aria-describedby,aria-pressed,aria-checked,aria-valuemin,aria-valuemax,aria-valuenow,aria-valuetext,aria-controls,aria-autocomplete,aria-expanded,aria-owns,aria-activedescendant,aria-posinset,aria-setsize,aria-level,role,alt".split(
-      ","
-    );
-    isNested = function(start, role) {
+    attrs =
+      "aria-disabled,aria-readonly,aria-haspopup,aria-orientation,aria-label,aria-labelledby,aria-describedby,aria-pressed,aria-checked,aria-valuemin,aria-valuemax,aria-valuenow,aria-valuetext,aria-controls,aria-autocomplete,aria-expanded,aria-owns,aria-activedescendant,aria-posinset,aria-setsize,aria-level,role,alt".split(
+        ","
+      );
+    isNested = function (start, role) {
       while (start) {
         start = start.parentNode;
 
@@ -1342,7 +1342,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       return "false";
     };
 
-    check = function(
+    check = function (
       nodes,
       obj,
       frames,
@@ -1370,7 +1370,7 @@ License: MIT (https://opensource.org/licenses/MIT)
             radiogroup: false,
             tablist: false,
             tree: false,
-            treegridGridTable: false
+            treegridGridTable: false,
           };
         }
       } else {
@@ -1497,7 +1497,7 @@ License: MIT (https://opensource.org/licenses/MIT)
 
         obj = {};
 
-        isSelfRef = function(node, role, ids) {
+        isSelfRef = function (node, role, ids) {
           if (
             !node ||
             node.nodeType !== 1 ||
@@ -1520,7 +1520,7 @@ License: MIT (https://opensource.org/licenses/MIT)
           return isF;
         };
 
-        isDefTerm = function(ids) {
+        isDefTerm = function (ids) {
           var isT = true,
             a = ids.split(" ");
 
@@ -1669,7 +1669,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       setTimeout(check, msInterval);
     };
 
-    var checkNames = function() {
+    var checkNames = function () {
       if (window.getAccName && typeof window.getAccName === "function") {
         var accNames = document.querySelectorAll(
           "a[href], area[href], article, aside, button, dialog, datalist, details, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hr, iframe, img, input, ul, ol, li, main, math, menu, nav, output, progress, section, select, summary, table, th, textarea, *[role]"
@@ -1678,7 +1678,7 @@ License: MIT (https://opensource.org/licenses/MIT)
         for (var aN = 0; aN < accNames.length; aN++) {
           window.getAccName(
             accNames[aN],
-            function(props, node) {
+            function (props, node) {
               if (
                 " datalist iframe img input progress select textarea ".indexOf(
                   " " + node.nodeName.toLowerCase() + " "
@@ -1722,21 +1722,21 @@ License: MIT (https://opensource.org/licenses/MIT)
         radiogroup: false,
         tablist: false,
         tree: false,
-        treegridGridTable: false
+        treegridGridTable: false,
       };
 
-      var load = (function() {
+      var load = (function () {
         function _load() {
-          return function(url, id) {
-            return new Promise(function(resolve, reject) {
+          return function (url, id) {
+            return new Promise(function (resolve, reject) {
               var t = document.createElement("link");
               t.type = "text/css";
               t.rel = "stylesheet";
               t.id = id;
-              t.onload = function() {
+              t.onload = function () {
                 resolve(url);
               };
-              t.onerror = function() {
+              t.onerror = function () {
                 // reject(url);
               };
               t.href = url;
@@ -1746,11 +1746,11 @@ License: MIT (https://opensource.org/licenses/MIT)
           };
         }
         return {
-          css: _load()
+          css: _load(),
         };
       })();
 
-      var loadCSS = function(file, i) {
+      var loadCSS = function (file, i) {
         if (!loader.cssLinks) loader.cssLinks = [];
         /*
         var l = document.createElement("link");
@@ -1767,7 +1767,7 @@ License: MIT (https://opensource.org/licenses/MIT)
 
     check();
 
-    bind(document.body, "mousedown", function(ev) {
+    bind(document.body, "mousedown", function (ev) {
       if (ev.shiftKey && ev.ctrlKey) {
         var targ = null;
 
@@ -1775,7 +1775,7 @@ License: MIT (https://opensource.org/licenses/MIT)
         else if (ev.srcElement) targ = ev.srcElement;
 
         if (targ.nodeType === 3) targ = targ.parentNode;
-        var getClosestRole = function(o) {
+        var getClosestRole = function (o) {
           while (o) {
             var r = o.getAttribute("role");
 
@@ -1809,7 +1809,7 @@ License: MIT (https://opensource.org/licenses/MIT)
       }
     });
 
-    (function() {
+    (function () {
       var a = document.createElement("script");
       a.type = "text/javascript";
       a.async = true;
@@ -1818,7 +1818,7 @@ License: MIT (https://opensource.org/licenses/MIT)
     })();
   };
 
-  setTimeout(function() {
+  setTimeout(function () {
     WSBMInit(true, useOffline, basePath, msInterval, document);
   }, 3000);
 

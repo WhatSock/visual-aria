@@ -1,21 +1,21 @@
-(function() {
-  $A.bind(window, "load", function() {
-    $A.bind("p.topLink > a", "click", function(ev) {
+(function () {
+  $A.bind(window, "load", function () {
+    $A.bind("p.topLink > a", "click", function (ev) {
       $A.setFocus($A.query("h1")[0]);
       ev.preventDefault();
     });
 
     $A.bind("#mlto", {
-      click: function(ev) {
+      click: function (ev) {
         this.href = "mailto:bryan.garaventa@whatsock.com";
       },
-      blur: function(ev) {
+      blur: function (ev) {
         this.href = "#";
-      }
+      },
     });
 
     // Generate permalinks
-    $A.query("h2, h3, h4, h5, h6", function(i, o) {
+    $A.query("h2, h3, h4, h5, h6", function (i, o) {
       if (!$A.hasClass(o, "nopermalink")) {
         var d = o.parentNode,
           a = $A.createEl(
@@ -36,7 +36,7 @@
                 (isVisualARIA
                   ? "http://whatsock.com/training/matrices/visual-aria.htm#"
                   : "http://whatsock.com/training/matrices/#") +
-                d.id
+                d.id,
             },
             null,
             "permalink"
@@ -57,7 +57,7 @@
     top.location.href = "http://whatsock.com/training/matrices/";
 
   var hds = {},
-    createHeaderNav = function() {
+    createHeaderNav = function () {
       var ph = $A.getEl("ph"),
         hs = $A.query("div.hd > h2");
       hds = {};
@@ -70,7 +70,7 @@
           var a = $A.createEl(
             "a",
             {
-              href: "#"
+              href: "#",
             },
             null,
             h.id,
@@ -80,7 +80,7 @@
           ph.appendChild(a);
           $A.setAttr(h, "tabindex", -1);
           hds[h.id] = h;
-          $A.bind(a, "click", function(ev) {
+          $A.bind(a, "click", function (ev) {
             hds[this.className].focus();
             ev.preventDefault();
           });
@@ -90,16 +90,16 @@
         }
       }
     },
-    generateTOC = function() {
+    generateTOC = function () {
       var links = [],
         pLevel = 0,
         map = {};
 
-      $A.query("div.hd", document, function(i, o) {
+      $A.query("div.hd", document, function (i, o) {
         var heading = $A.query("h1, h2, h3, h4, h5, h6", o)[0],
           level = parseInt(heading.nodeName.substring(1)),
           a = $A.createEl("a", {
-            href: "#" + o.id
+            href: "#" + o.id,
           }),
           props = {
             hd: o,
@@ -108,7 +108,7 @@
             level: level,
             map: {},
             a: a,
-            li: $A.createEl("li")
+            li: $A.createEl("li"),
           };
 
         if (level > 1) props.pSibling = map[level];
@@ -157,14 +157,14 @@
       var list = $A.createEl(
         "ul",
         {
-          "aria-label": "Table of Contents"
+          "aria-label": "Table of Contents",
         },
         {
-          display: "none"
+          display: "none",
         }
       );
 
-      $A.query(links, function(i, a) {
+      $A.query(links, function (i, a) {
         var props = $A.internal.data(a, "props");
 
         if (props.level === 1) list.appendChild(props.li);
@@ -177,14 +177,14 @@
 
       $A.getEl("tocDD").appendChild(list);
 
-      $A.bind("#tocDD a", "click", function(ev) {
+      $A.bind("#tocDD a", "click", function (ev) {
         $A.internal.data(this, "props").hd.focus();
         ev.preventDefault();
       });
 
       var isVisible = false;
 
-      $A.bind("#tocBtn", "click", function(ev) {
+      $A.bind("#tocBtn", "click", function (ev) {
         if (isVisible) isVisible = false;
         else isVisible = true;
         $A.setAttr(this, "aria-expanded", isVisible ? "true" : "false");
