@@ -1481,7 +1481,7 @@ License: MIT (https://opensource.org/licenses/MIT)
         }
 
         nodes = document.querySelectorAll(
-          "caption[aria-labelledby],figcaption[aria-labelledby],code[aria-labelledby],del[aria-labelledby],em[aria-labelledby],ins[aria-labelledby],p[aria-labelledby],strong[aria-labelledby],sub[aria-labelledby],sup[aria-labelledby],caption[aria-label],figcaption[aria-label],code[aria-label],del[aria-label],em[aria-label],ins[aria-label],p[aria-label],strong[aria-label],sub[aria-label],sup[aria-label]"
+          "div:not([role])[aria-labelledby], span:not([role])[aria-labelledby], caption:not([role])[aria-labelledby], figcaption:not([role])[aria-labelledby], code:not([role])[aria-labelledby], del:not([role])[aria-labelledby], em:not([role])[aria-labelledby], ins:not([role])[aria-labelledby], p:not([role])[aria-labelledby], strong:not([role])[aria-labelledby], sub:not([role])[aria-labelledby], sup:not([role])[aria-labelledby], div:not([role])[aria-label], span:not([role])[aria-label], caption:not([role])[aria-label], figcaption:not([role])[aria-label], code:not([role])[aria-label], del:not([role])[aria-label], em:not([role])[aria-label], ins:not([role])[aria-label], p:not([role])[aria-label], strong:not([role])[aria-label], sub:not([role])[aria-label], sup:not([role])[aria-label]"
         );
 
         for (var n = 0; n < nodes.length; n++) {
