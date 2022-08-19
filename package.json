@@ -8,6 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "build": "uglifyjs \"./docs/visual-aria/roles.uncompressed.js\" --comments /^!/ --compress --mangle --output \"./docs/visual-aria/roles.js\"",
     "fix": "prettier --write \"./docs/visual-aria/roles.uncompressed.js\" \"./**/{setup.js,radios.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/whatsock/visual-aria#readme",
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "uglify-js": "^3.17.0"
   }
 }
