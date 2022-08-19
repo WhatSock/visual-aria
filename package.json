@@ -1,0 +1,24 @@
+{
+  "name": "visual-aria",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Visual ARIA allows engineers, testers, educators, and students to physically observe ARIA usage within web technologies, including ARIA 1.1 structural, live region, and widget roles, proper nesting and focus management, plus requisite and optional supporting attributes to aid in development.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whatsock/visual-aria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whatsock/visual-aria/issues"
+  },
+  "homepage": "https://github.com/whatsock/visual-aria#readme"
+}
