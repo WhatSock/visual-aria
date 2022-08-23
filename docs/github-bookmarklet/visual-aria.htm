@@ -144,7 +144,8 @@
                             <ul>
                                 <li><strong class="orangeTltp">Orange border with orange tooltip:</strong>
                                     Identifies technically compliant interactive role usage.
-                                    <em>(Requires keyboard testing to validate functionality)</em></li>
+                                    <em>(Requires keyboard testing to validate functionality)</em>
+                                </li>
                                 <li><strong class="greenTltp">Green border with green tooltip:</strong>
                                     Identifies technically compliant interactive role usage that matches
                                     the correct focus management for that role type.</li>
@@ -172,7 +173,8 @@
                                     label element with matching <code>'for'</code> and <code>'id'</code> attributes. Also,
                                     <code>aria-labelledby</code> cannot recursively reference other elements
                                     that include <code>aria-labelledby</code>. The presence of <code>role="presentation"</code>
-                                    or <code>role="none"</code> will nullify <code>aria-labelledby</code> on the same node.</dd>
+                                    or <code>role="none"</code> will nullify <code>aria-labelledby</code> on the same node.
+                                </dd>
 
                                 <dt><code>aria-label</code></dt>
                                 <dd>Caveats: Only if <code>aria-labelledby</code> is not set. If included within a
@@ -182,7 +184,8 @@
                                     <code>aria-label</code> will supersede any embedded content or additional <code>aria-label</code>
                                     attribute values; which will be ignored when setting the Accessible Name
                                     of the parent role. The presence of <code>role="presentation"</code> or <code>role="none"</code>
-                                    will nullify <code>aria-label</code> on the same node.</dd>
+                                    will nullify <code>aria-label</code> on the same node.
+                                </dd>
 
                                 <dt>HTML label element with matching <code>'for'</code> and <code>'id'</code> attributes</dt>
                                 <dd>Caveats: Only if <code>aria-labelledby</code> or <code>aria-label</code> is not set; on HTML
@@ -229,10 +232,12 @@
                             <p> Any use of <code>aria-hidden="true"</code> or the CSS properties
                                 <code>display:none</code> or <code>visibility:hidden</code>, will cancel the naming
                                 calculation for the referenced element and all elements within
-                                the subtree of that element.</p>
+                                the subtree of that element.
+                            </p>
                             <p> Additionally, the presence of CSS content via the
                                 <code>::before</code> and <code>::after</code> pseudo elements are also included as part
-                                of the naming calculation.</p>
+                                of the naming calculation.
+                            </p>
                             <p> The Name and Description exposed by Visual ARIA strictly
                                 follows the <a href="https://www.w3.org/TR/accname-1.1/" target="_blank">Alternative Text Calculation</a> for interactive elements, which may not exactly match what is represented by the Accessibility Tree within certain browsers, nor what is conveyed by Assistive Technologies.</p>
                             <p> The value in exposing this calculation however, is to identify current bugs within browsers that need to be reported to their venders when discovered using Object Inspector for example, as well as bugs with Assistive

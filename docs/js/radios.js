@@ -1,8 +1,8 @@
-$(function() {
+$(function () {
   var index = 0,
     radios = $('a[role="radio"]');
   radios.bind({
-    keydown: function(ev) {
+    keydown: function (ev) {
       var k = ev.which || ev.keyCode;
 
       if (k >= 37 && k <= 40) {
@@ -17,22 +17,22 @@ $(function() {
         ev.preventDefault();
       }
     },
-    click: function(ev) {
+    click: function (ev) {
       index = $.inArray(this, radios.get());
       setFocus();
       ev.preventDefault();
-    }
+    },
   });
-  var setFocus = function() {
+  var setFocus = function () {
     radios.attr({
       tabindex: "-1",
-      "aria-checked": "false"
+      "aria-checked": "false",
     });
 
     $(radios.get(index))
       .attr({
         tabindex: "0",
-        "aria-checked": "true"
+        "aria-checked": "true",
       })
       .focus();
   };
