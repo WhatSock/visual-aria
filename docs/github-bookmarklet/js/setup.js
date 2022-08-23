@@ -23,18 +23,18 @@
             {
               href:
                 (isVisualARIA
-                  ? "http://whatsock.com/training/matrices/visual-aria.htm#"
+                  ? "https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm#"
                   : "http://whatsock.com/training/matrices/#") + d.id,
               title:
                 "Permalink: " +
                 (isVisualARIA
-                  ? "http://whatsock.com/training/matrices/visual-aria.htm#"
+                  ? "https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm#"
                   : "http://whatsock.com/training/matrices/#") +
                 d.id,
               "aria-label":
                 "Permalink: " +
                 (isVisualARIA
-                  ? "http://whatsock.com/training/matrices/visual-aria.htm#"
+                  ? "https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm#"
                   : "http://whatsock.com/training/matrices/#") +
                 d.id,
             },
